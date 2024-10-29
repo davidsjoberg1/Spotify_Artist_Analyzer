@@ -1,0 +1,1173 @@
+{
+    "artists": [
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/7zLm9op6LgPqKL62d1FzhO"
+            },
+            "followers": {
+                "href": null,
+                "total": 191466
+            },
+            "genres": [
+                "swedish hip hop",
+                "swedish trap pop"
+            ],
+            "href": "https://api.spotify.com/v1/artists/7zLm9op6LgPqKL62d1FzhO",
+            "id": "7zLm9op6LgPqKL62d1FzhO",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5ebf30ecf0435010b247f99f35b",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab67616100005174f30ecf0435010b247f99f35b",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f178f30ecf0435010b247f99f35b",
+                    "width": 160
+                }
+            ],
+            "name": "ADAAM",
+            "popularity": 60,
+            "type": "artist",
+            "uri": "spotify:artist:7zLm9op6LgPqKL62d1FzhO"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1uNFoZAHBGtllmzznpCI3s"
+            },
+            "followers": {
+                "href": null,
+                "total": 78302909
+            },
+            "genres": [
+                "canadian pop",
+                "pop"
+            ],
+            "href": "https://api.spotify.com/v1/artists/1uNFoZAHBGtllmzznpCI3s",
+            "id": "1uNFoZAHBGtllmzznpCI3s",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5eb8ae7f2aaa9817a704a87ea36",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab676161000051748ae7f2aaa9817a704a87ea36",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f1788ae7f2aaa9817a704a87ea36",
+                    "width": 160
+                }
+            ],
+            "name": "Justin Bieber",
+            "popularity": 91,
+            "type": "artist",
+            "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/4AK6F7OLvEQ5QYCBNiQWHq"
+            },
+            "followers": {
+                "href": null,
+                "total": 37223174
+            },
+            "genres": [
+                "boy band",
+                "pop",
+                "post-teen pop",
+                "talent show"
+            ],
+            "href": "https://api.spotify.com/v1/artists/4AK6F7OLvEQ5QYCBNiQWHq",
+            "id": "4AK6F7OLvEQ5QYCBNiQWHq",
+            "images": [
+                {
+                    "height": 1000,
+                    "url": "https://i.scdn.co/image/5bb443424a1ad71603c43d67f5af1a04da6bb3c8",
+                    "width": 1000
+                },
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/289c7f686f5b78ceeb224453cf9a15697a678a79",
+                    "width": 640
+                },
+                {
+                    "height": 200,
+                    "url": "https://i.scdn.co/image/45741ba38b51130bb96e00c0e24d17ba311a9293",
+                    "width": 200
+                },
+                {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/6c89c662ad0ab75bc2af9a3ae2b16f811daced50",
+                    "width": 64
+                }
+            ],
+            "name": "One Direction",
+            "popularity": 91,
+            "type": "artist",
+            "uri": "spotify:artist:4AK6F7OLvEQ5QYCBNiQWHq"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4"
+            },
+            "followers": {
+                "href": null,
+                "total": 92950941
+            },
+            "genres": [
+                "canadian hip hop",
+                "canadian pop",
+                "hip hop",
+                "pop rap",
+                "rap"
+            ],
+            "href": "https://api.spotify.com/v1/artists/3TVXtAsR1Inumwj472S9r4",
+            "id": "3TVXtAsR1Inumwj472S9r4",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5eb4293385d324db8558179afd9",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab676161000051744293385d324db8558179afd9",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f1784293385d324db8558179afd9",
+                    "width": 160
+                }
+            ],
+            "name": "Drake",
+            "popularity": 96,
+            "type": "artist",
+            "uri": "spotify:artist:3TVXtAsR1Inumwj472S9r4"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02"
+            },
+            "followers": {
+                "href": null,
+                "total": 124675639
+            },
+            "genres": [
+                "pop"
+            ],
+            "href": "https://api.spotify.com/v1/artists/06HL4z0CvFAxyc27GXpf02",
+            "id": "06HL4z0CvFAxyc27GXpf02",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5ebe672b5f553298dcdccb0e676",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab67616100005174e672b5f553298dcdccb0e676",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f178e672b5f553298dcdccb0e676",
+                    "width": 160
+                }
+            ],
+            "name": "Taylor Swift",
+            "popularity": 100,
+            "type": "artist",
+            "uri": "spotify:artist:06HL4z0CvFAxyc27GXpf02"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/2DaxqgrOhkeH0fpeiQq2f4"
+            },
+            "followers": {
+                "href": null,
+                "total": 10803627
+            },
+            "genres": [
+                "beatlesque",
+                "britpop",
+                "madchester",
+                "permanent wave",
+                "rock"
+            ],
+            "href": "https://api.spotify.com/v1/artists/2DaxqgrOhkeH0fpeiQq2f4",
+            "id": "2DaxqgrOhkeH0fpeiQq2f4",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5eb0522e98a6f0cf1ddbee9a74f",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab676161000051740522e98a6f0cf1ddbee9a74f",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f1780522e98a6f0cf1ddbee9a74f",
+                    "width": 160
+                }
+            ],
+            "name": "Oasis",
+            "popularity": 82,
+            "type": "artist",
+            "uri": "spotify:artist:2DaxqgrOhkeH0fpeiQq2f4"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1VJ0briNOlXRtJUAzoUJdt"
+            },
+            "followers": {
+                "href": null,
+                "total": 1016854
+            },
+            "genres": [
+                "australian house",
+                "house"
+            ],
+            "href": "https://api.spotify.com/v1/artists/1VJ0briNOlXRtJUAzoUJdt",
+            "id": "1VJ0briNOlXRtJUAzoUJdt",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5ebcd3fb82b1270a175ed000118",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab67616100005174cd3fb82b1270a175ed000118",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f178cd3fb82b1270a175ed000118",
+                    "width": 160
+                }
+            ],
+            "name": "FISHER",
+            "popularity": 79,
+            "type": "artist",
+            "uri": "spotify:artist:1VJ0briNOlXRtJUAzoUJdt"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/55ZGFvikpNjQHvtTWS5aZF"
+            },
+            "followers": {
+                "href": null,
+                "total": 161417
+            },
+            "genres": [
+                "swedish pop"
+            ],
+            "href": "https://api.spotify.com/v1/artists/55ZGFvikpNjQHvtTWS5aZF",
+            "id": "55ZGFvikpNjQHvtTWS5aZF",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5eb7829de6cc45cd6ba52cc7ce1",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab676161000051747829de6cc45cd6ba52cc7ce1",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f1787829de6cc45cd6ba52cc7ce1",
+                    "width": 160
+                }
+            ],
+            "name": "Bolaget",
+            "popularity": 64,
+            "type": "artist",
+            "uri": "spotify:artist:55ZGFvikpNjQHvtTWS5aZF"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/4V8LLVI7PbaPR0K2TGSxFF"
+            },
+            "followers": {
+                "href": null,
+                "total": 17131853
+            },
+            "genres": [
+                "hip hop",
+                "rap"
+            ],
+            "href": "https://api.spotify.com/v1/artists/4V8LLVI7PbaPR0K2TGSxFF",
+            "id": "4V8LLVI7PbaPR0K2TGSxFF",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5ebdfa2b0c7544a772042a12e52",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab67616100005174dfa2b0c7544a772042a12e52",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f178dfa2b0c7544a772042a12e52",
+                    "width": 160
+                }
+            ],
+            "name": "Tyler, The Creator",
+            "popularity": 91,
+            "type": "artist",
+            "uri": "spotify:artist:4V8LLVI7PbaPR0K2TGSxFF"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/74KM79TiuVKeVCqs8QtB0B"
+            },
+            "followers": {
+                "href": null,
+                "total": 14187694
+            },
+            "genres": [
+                "pop"
+            ],
+            "href": "https://api.spotify.com/v1/artists/74KM79TiuVKeVCqs8QtB0B",
+            "id": "74KM79TiuVKeVCqs8QtB0B",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5ebe053b8338322b9c8609ee7ae",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab67616100005174e053b8338322b9c8609ee7ae",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f178e053b8338322b9c8609ee7ae",
+                    "width": 160
+                }
+            ],
+            "name": "Sabrina Carpenter",
+            "popularity": 95,
+            "type": "artist",
+            "uri": "spotify:artist:74KM79TiuVKeVCqs8QtB0B"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/3dtPDEZGp9vvPpe8reKHUR"
+            },
+            "followers": {
+                "href": null,
+                "total": 1989
+            },
+            "genres": [
+                "swedish trap pop",
+                "swedish tropical house"
+            ],
+            "href": "https://api.spotify.com/v1/artists/3dtPDEZGp9vvPpe8reKHUR",
+            "id": "3dtPDEZGp9vvPpe8reKHUR",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5ebabba75144021952957dff812",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab67616100005174abba75144021952957dff812",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f178abba75144021952957dff812",
+                    "width": 160
+                }
+            ],
+            "name": "Le Winter",
+            "popularity": 47,
+            "type": "artist",
+            "uri": "spotify:artist:3dtPDEZGp9vvPpe8reKHUR"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5nIiVY5SmxWGxF0zFqUHMc"
+            },
+            "followers": {
+                "href": null,
+                "total": 31531
+            },
+            "genres": [
+                "glitch hop",
+                "microhouse"
+            ],
+            "href": "https://api.spotify.com/v1/artists/5nIiVY5SmxWGxF0zFqUHMc",
+            "id": "5nIiVY5SmxWGxF0zFqUHMc",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5eb225e6a269e5fcc438e6c9f51",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab67616100005174225e6a269e5fcc438e6c9f51",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f178225e6a269e5fcc438e6c9f51",
+                    "width": 160
+                }
+            ],
+            "name": "Spoonbill",
+            "popularity": 26,
+            "type": "artist",
+            "uri": "spotify:artist:5nIiVY5SmxWGxF0zFqUHMc"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/7CbWqHFTrAsgU7GAP82ME2"
+            },
+            "followers": {
+                "href": null,
+                "total": 141
+            },
+            "genres": [],
+            "href": "https://api.spotify.com/v1/artists/7CbWqHFTrAsgU7GAP82ME2",
+            "id": "7CbWqHFTrAsgU7GAP82ME2",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5ebc34941e827eab07c90f18acf",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab67616100005174c34941e827eab07c90f18acf",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f178c34941e827eab07c90f18acf",
+                    "width": 160
+                }
+            ],
+            "name": "Psymon",
+            "popularity": 7,
+            "type": "artist",
+            "uri": "spotify:artist:7CbWqHFTrAsgU7GAP82ME2"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/0cniTg5ZrXwGs8RpWoxiB7"
+            },
+            "followers": {
+                "href": null,
+                "total": 9
+            },
+            "genres": [],
+            "href": "https://api.spotify.com/v1/artists/0cniTg5ZrXwGs8RpWoxiB7",
+            "id": "0cniTg5ZrXwGs8RpWoxiB7",
+            "images": [],
+            "name": "Pro Nobis",
+            "popularity": 7,
+            "type": "artist",
+            "uri": "spotify:artist:0cniTg5ZrXwGs8RpWoxiB7"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/22wbnEMDvgVIAGdFeek6ET"
+            },
+            "followers": {
+                "href": null,
+                "total": 3805971
+            },
+            "genres": [
+                "singer-songwriter pop"
+            ],
+            "href": "https://api.spotify.com/v1/artists/22wbnEMDvgVIAGdFeek6ET",
+            "id": "22wbnEMDvgVIAGdFeek6ET",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5ebb2ce21a89c09c00d80d8ca25",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab67616100005174b2ce21a89c09c00d80d8ca25",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f178b2ce21a89c09c00d80d8ca25",
+                    "width": 160
+                }
+            ],
+            "name": "Benson Boone",
+            "popularity": 86,
+            "type": "artist",
+            "uri": "spotify:artist:22wbnEMDvgVIAGdFeek6ET"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/33qOK5uJ8AR2xuQQAhHump"
+            },
+            "followers": {
+                "href": null,
+                "total": 3257048
+            },
+            "genres": [],
+            "href": "https://api.spotify.com/v1/artists/33qOK5uJ8AR2xuQQAhHump",
+            "id": "33qOK5uJ8AR2xuQQAhHump",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5ebf9cf783eb03eb66aa43943ba",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab67616100005174f9cf783eb03eb66aa43943ba",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f178f9cf783eb03eb66aa43943ba",
+                    "width": 160
+                }
+            ],
+            "name": "Teddy Swims",
+            "popularity": 86,
+            "type": "artist",
+            "uri": "spotify:artist:33qOK5uJ8AR2xuQQAhHump"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/4N8BwYTEC6XqykGvXXlmfv"
+            },
+            "followers": {
+                "href": null,
+                "total": 840518
+            },
+            "genres": [
+                "jazz funk",
+                "jazz guitar",
+                "smooth jazz",
+                "soul jazz",
+                "yacht rock"
+            ],
+            "href": "https://api.spotify.com/v1/artists/4N8BwYTEC6XqykGvXXlmfv",
+            "id": "4N8BwYTEC6XqykGvXXlmfv",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5eb487b00fa17362b8eab3b16c8",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab67616100005174487b00fa17362b8eab3b16c8",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f178487b00fa17362b8eab3b16c8",
+                    "width": 160
+                }
+            ],
+            "name": "George Benson",
+            "popularity": 67,
+            "type": "artist",
+            "uri": "spotify:artist:4N8BwYTEC6XqykGvXXlmfv"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/2RQXRUsr4IW1f3mKyKsy4B"
+            },
+            "followers": {
+                "href": null,
+                "total": 3501388
+            },
+            "genres": [
+                "pov: indie",
+                "singer-songwriter pop"
+            ],
+            "href": "https://api.spotify.com/v1/artists/2RQXRUsr4IW1f3mKyKsy4B",
+            "id": "2RQXRUsr4IW1f3mKyKsy4B",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5eb8c52b10e110f62fe45761590",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab676161000051748c52b10e110f62fe45761590",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f1788c52b10e110f62fe45761590",
+                    "width": 160
+                }
+            ],
+            "name": "Noah Kahan",
+            "popularity": 87,
+            "type": "artist",
+            "uri": "spotify:artist:2RQXRUsr4IW1f3mKyKsy4B"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1b4hTx0gHm3uA0AkZ3GdtY"
+            },
+            "followers": {
+                "href": null,
+                "total": 7410
+            },
+            "genres": [
+                "aussietronica",
+                "australian house"
+            ],
+            "href": "https://api.spotify.com/v1/artists/1b4hTx0gHm3uA0AkZ3GdtY",
+            "id": "1b4hTx0gHm3uA0AkZ3GdtY",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5ebbda7cf5a19d122115e4a2d8f",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab67616100005174bda7cf5a19d122115e4a2d8f",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f178bda7cf5a19d122115e4a2d8f",
+                    "width": 160
+                }
+            ],
+            "name": "Benson",
+            "popularity": 39,
+            "type": "artist",
+            "uri": "spotify:artist:1b4hTx0gHm3uA0AkZ3GdtY"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/4mmMtabvFCKA6HfmVmitNH"
+            },
+            "followers": {
+                "href": null,
+                "total": 46218
+            },
+            "genres": [
+                "movie tunes"
+            ],
+            "href": "https://api.spotify.com/v1/artists/4mmMtabvFCKA6HfmVmitNH",
+            "id": "4mmMtabvFCKA6HfmVmitNH",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5eb583a4cf451be21040cfaa0a4",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab67616100005174583a4cf451be21040cfaa0a4",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f178583a4cf451be21040cfaa0a4",
+                    "width": 160
+                }
+            ],
+            "name": "Jodi Benson",
+            "popularity": 55,
+            "type": "artist",
+            "uri": "spotify:artist:4mmMtabvFCKA6HfmVmitNH"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/33NVpKoXjItPwUJTMZIOiY"
+            },
+            "followers": {
+                "href": null,
+                "total": 2419046
+            },
+            "genres": [
+                "gen z singer-songwriter",
+                "singer-songwriter pop"
+            ],
+            "href": "https://api.spotify.com/v1/artists/33NVpKoXjItPwUJTMZIOiY",
+            "id": "33NVpKoXjItPwUJTMZIOiY",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5eb93d059c11c6744bf76ada1e3",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab6761610000517493d059c11c6744bf76ada1e3",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f17893d059c11c6744bf76ada1e3",
+                    "width": 160
+                }
+            ],
+            "name": "David Kushner",
+            "popularity": 77,
+            "type": "artist",
+            "uri": "spotify:artist:33NVpKoXjItPwUJTMZIOiY"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6bPV28MZGhKrAelauCkYto"
+            },
+            "followers": {
+                "href": null,
+                "total": 599
+            },
+            "genres": [],
+            "href": "https://api.spotify.com/v1/artists/6bPV28MZGhKrAelauCkYto",
+            "id": "6bPV28MZGhKrAelauCkYto",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5eb8b2756f73198728be87fd8dc",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab676161000051748b2756f73198728be87fd8dc",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f1788b2756f73198728be87fd8dc",
+                    "width": 160
+                }
+            ],
+            "name": "Benson",
+            "popularity": 14,
+            "type": "artist",
+            "uri": "spotify:artist:6bPV28MZGhKrAelauCkYto"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/2G6E8Q9UTzDIhoawhJm33M"
+            },
+            "followers": {
+                "href": null,
+                "total": 3507
+            },
+            "genres": [],
+            "href": "https://api.spotify.com/v1/artists/2G6E8Q9UTzDIhoawhJm33M",
+            "id": "2G6E8Q9UTzDIhoawhJm33M",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5eb8a1b520595225aba786851c7",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab676161000051748a1b520595225aba786851c7",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f1788a1b520595225aba786851c7",
+                    "width": 160
+                }
+            ],
+            "name": "Ray Benson",
+            "popularity": 50,
+            "type": "artist",
+            "uri": "spotify:artist:2G6E8Q9UTzDIhoawhJm33M"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6wlhqnATSJIc0NQ64VxOVJ"
+            },
+            "followers": {
+                "href": null,
+                "total": 560738
+            },
+            "genres": [
+                "gen z singer-songwriter",
+                "singer-songwriter pop"
+            ],
+            "href": "https://api.spotify.com/v1/artists/6wlhqnATSJIc0NQ64VxOVJ",
+            "id": "6wlhqnATSJIc0NQ64VxOVJ",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5eb05b438a36915d1c619dd1e13",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab6761610000517405b438a36915d1c619dd1e13",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f17805b438a36915d1c619dd1e13",
+                    "width": 160
+                }
+            ],
+            "name": "Matt Hansen",
+            "popularity": 72,
+            "type": "artist",
+            "uri": "spotify:artist:6wlhqnATSJIc0NQ64VxOVJ"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/2XMpvSgUFKKis8A443XElP"
+            },
+            "followers": {
+                "href": null,
+                "total": 905
+            },
+            "genres": [],
+            "href": "https://api.spotify.com/v1/artists/2XMpvSgUFKKis8A443XElP",
+            "id": "2XMpvSgUFKKis8A443XElP",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5ebb664136ceb3707501359d192",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab67616100005174b664136ceb3707501359d192",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f178b664136ceb3707501359d192",
+                    "width": 160
+                }
+            ],
+            "name": "Benson",
+            "popularity": 16,
+            "type": "artist",
+            "uri": "spotify:artist:2XMpvSgUFKKis8A443XElP"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1XlLhtgJjC4ROQZilBZAvw"
+            },
+            "followers": {
+                "href": null,
+                "total": 435825
+            },
+            "genres": [
+                "singer-songwriter pop"
+            ],
+            "href": "https://api.spotify.com/v1/artists/1XlLhtgJjC4ROQZilBZAvw",
+            "id": "1XlLhtgJjC4ROQZilBZAvw",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5eb028f5f24f6d0281a9b170d26",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab67616100005174028f5f24f6d0281a9b170d26",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f178028f5f24f6d0281a9b170d26",
+                    "width": 160
+                }
+            ],
+            "name": "Nic D",
+            "popularity": 68,
+            "type": "artist",
+            "uri": "spotify:artist:1XlLhtgJjC4ROQZilBZAvw"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/4NM0BEDQRBt1E8vYmlpSng"
+            },
+            "followers": {
+                "href": null,
+                "total": 1
+            },
+            "genres": [],
+            "href": "https://api.spotify.com/v1/artists/4NM0BEDQRBt1E8vYmlpSng",
+            "id": "4NM0BEDQRBt1E8vYmlpSng",
+            "images": [],
+            "name": "Benson",
+            "popularity": 17,
+            "type": "artist",
+            "uri": "spotify:artist:4NM0BEDQRBt1E8vYmlpSng"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/3QcGV278a6mmLRTOK29WBP"
+            },
+            "followers": {
+                "href": null,
+                "total": 5056
+            },
+            "genres": [
+                "movie tunes"
+            ],
+            "href": "https://api.spotify.com/v1/artists/3QcGV278a6mmLRTOK29WBP",
+            "id": "3QcGV278a6mmLRTOK29WBP",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5eb4dc932abd84f977a7bd80d42",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab676161000051744dc932abd84f977a7bd80d42",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f1784dc932abd84f977a7bd80d42",
+                    "width": 160
+                }
+            ],
+            "name": "Robby Benson",
+            "popularity": 44,
+            "type": "artist",
+            "uri": "spotify:artist:3QcGV278a6mmLRTOK29WBP"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5IH6FPUwQTxPSXurCrcIov"
+            },
+            "followers": {
+                "href": null,
+                "total": 5263737
+            },
+            "genres": [
+                "alt z",
+                "pop",
+                "pov: indie"
+            ],
+            "href": "https://api.spotify.com/v1/artists/5IH6FPUwQTxPSXurCrcIov",
+            "id": "5IH6FPUwQTxPSXurCrcIov",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5eb10164a7f6d166aabbb00c4dd",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab6761610000517410164a7f6d166aabbb00c4dd",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f17810164a7f6d166aabbb00c4dd",
+                    "width": 160
+                }
+            ],
+            "name": "Alec Benjamin",
+            "popularity": 77,
+            "type": "artist",
+            "uri": "spotify:artist:5IH6FPUwQTxPSXurCrcIov"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/2xEGuVqXz9Qm0tjd3xWhKo"
+            },
+            "followers": {
+                "href": null,
+                "total": 46
+            },
+            "genres": [],
+            "href": "https://api.spotify.com/v1/artists/2xEGuVqXz9Qm0tjd3xWhKo",
+            "id": "2xEGuVqXz9Qm0tjd3xWhKo",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab67616d0000b273055541309463c973b82d8048",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/ab67616d00001e02055541309463c973b82d8048",
+                    "width": 300
+                },
+                {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/ab67616d00004851055541309463c973b82d8048",
+                    "width": 64
+                }
+            ],
+            "name": "Benson",
+            "popularity": 9,
+            "type": "artist",
+            "uri": "spotify:artist:2xEGuVqXz9Qm0tjd3xWhKo"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5aG35McAT5He6s8j7ERkM2"
+            },
+            "followers": {
+                "href": null,
+                "total": 0
+            },
+            "genres": [],
+            "href": "https://api.spotify.com/v1/artists/5aG35McAT5He6s8j7ERkM2",
+            "id": "5aG35McAT5He6s8j7ERkM2",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab67616d0000b27393a2037597359c1de219759c",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/ab67616d00001e0293a2037597359c1de219759c",
+                    "width": 300
+                },
+                {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/ab67616d0000485193a2037597359c1de219759c",
+                    "width": 64
+                }
+            ],
+            "name": "Benson Boyd",
+            "popularity": 29,
+            "type": "artist",
+            "uri": "spotify:artist:5aG35McAT5He6s8j7ERkM2"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/4NYMUsIcUUsBHbV9DICa5x"
+            },
+            "followers": {
+                "href": null,
+                "total": 417265
+            },
+            "genres": [
+                "contemporary country",
+                "modern country pop"
+            ],
+            "href": "https://api.spotify.com/v1/artists/4NYMUsIcUUsBHbV9DICa5x",
+            "id": "4NYMUsIcUUsBHbV9DICa5x",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6761610000e5eb1d43047a32706c03490957da",
+                    "width": 640
+                },
+                {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/ab676161000051741d43047a32706c03490957da",
+                    "width": 320
+                },
+                {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/ab6761610000f1781d43047a32706c03490957da",
+                    "width": 160
+                }
+            ],
+            "name": "Nate Smith",
+            "popularity": 74,
+            "type": "artist",
+            "uri": "spotify:artist:4NYMUsIcUUsBHbV9DICa5x"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/48F5gEtoWMHBpOdENycatK"
+            },
+            "followers": {
+                "href": null,
+                "total": 33
+            },
+            "genres": [],
+            "href": "https://api.spotify.com/v1/artists/48F5gEtoWMHBpOdENycatK",
+            "id": "48F5gEtoWMHBpOdENycatK",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab67616d0000b273d1cc2b5500eb98ba96e0d871",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/ab67616d00001e02d1cc2b5500eb98ba96e0d871",
+                    "width": 300
+                },
+                {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/ab67616d00004851d1cc2b5500eb98ba96e0d871",
+                    "width": 64
+                }
+            ],
+            "name": "Benson",
+            "popularity": 5,
+            "type": "artist",
+            "uri": "spotify:artist:48F5gEtoWMHBpOdENycatK"
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/0IvIc7Vb5LqitUv3xctgDi"
+            },
+            "followers": {
+                "href": null,
+                "total": 22
+            },
+            "genres": [],
+            "href": "https://api.spotify.com/v1/artists/0IvIc7Vb5LqitUv3xctgDi",
+            "id": "0IvIc7Vb5LqitUv3xctgDi",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab67616d0000b273ea9fe91920f60c07229fc0ec",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/ab67616d00001e02ea9fe91920f60c07229fc0ec",
+                    "width": 300
+                },
+                {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/ab67616d00004851ea9fe91920f60c07229fc0ec",
+                    "width": 64
+                }
+            ],
+            "name": "Benson Richardson",
+            "popularity": 27,
+            "type": "artist",
+            "uri": "spotify:artist:0IvIc7Vb5LqitUv3xctgDi"
+        }
+    ]
+}
