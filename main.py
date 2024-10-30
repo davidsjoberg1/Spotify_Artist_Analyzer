@@ -18,8 +18,8 @@ def find_all_artists(token, start_time):
             break
         
         # Accessing all_artists.json and search_artists
-        all_artists = get_json("all_artists.json")["artists"]
-        search_artists = get_json("search_artists.json")["artists"]
+        all_artists = get_json("all_artists.json")
+        search_artists = get_json("search_artists.json")
         print("All artists: ", len(all_artists))
         print("Search artists: ", len(search_artists))
       
@@ -28,8 +28,8 @@ def find_all_artists(token, start_time):
             break
 
         # Get the artist to search for and remove it from the search file
-        current_artist = search_artists.pop(0)
-        delete_json(current_artist, "search_artists")
+        current_artist_id, current_artist_data = next(iter(search_artists.keys())), next(iter(search_artists.values()))
+        delete_json(current_artist_id, "search_artists.json")
 
         # maximum 180 requests per minute
         if counter == 90:
@@ -40,23 +40,41 @@ def find_all_artists(token, start_time):
             counter = 0
 
         # Get related artists, add them to the current artist and write to all_artists file
-        related_artists = get_related_artists(token, current_artist["id"])
-        current_artist["related_artists"] = related_artists
-        write_json(all_artists, "all_artists")
+        related_artists = get_related_artists(token, current_artist_id)
+        trimmed_related_artists = []
+        for artist in related_artists:
+            artist_id, artist_data = create_artist_data(artist)
+            trimmed_related_artists.append({artist_id: artist_data})
+        current_artist_data["related_artists"] = trimmed_related_artists
+        write_json(current_artist_id, current_artist_data, "all_artists.json")
         counter += 1
 
         # Every artist that has not been evaluated will be added to the search file
         for artist in related_artists:
-            if artist not in all_artists:
-                write_json(search_artists, "search_artists")
+            if artist["id"] not in all_artists:
+                artist_id, artist_data = create_artist_data(artist)
+                write_json(artist_id, artist_data, "search_artists.json")
 
 
 
 def add_new_artist(token):
     artist_name = input("Enter artist name: ")
-    artist = get_artist(token, artist_name)
+    artist= get_artist(token, artist_name)
     for a in artist:
-        write_json(a, "search_artists.json")
+        artist_id, artist_data = create_artist_data(a)
+        write_json(artist_id, artist_data, "search_artists.json")
+
+def create_artist_data(artist):
+    artist_id = artist["id"]
+    artist_data = {
+        "name": artist["name"],
+        "genres": artist["genres"],
+        "popularity": artist["popularity"],
+        "followers": artist["followers"]["total"], 
+        "related_artists": []
+        }
+    
+    return artist_id, artist_data
 
 
     
