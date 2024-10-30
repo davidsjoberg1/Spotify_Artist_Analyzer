@@ -1,8 +1,10 @@
 from datetime import datetime
 import time
-from json_handler import get_json, write_json, delete_json
 from spotify_api_handler import get_token, get_artist, get_related_artists
 import requests
+import sqlite3
+from db_handler import *
+
 
 
 def find_all_artists(token, start_time):
@@ -19,17 +21,22 @@ def find_all_artists(token, start_time):
                 break
             
             # Accessing all_artists.json and search_artists
-            all_artists = get_json("all_artists.json")
-            search_artists = get_json("search_artists.json")
-            print("All artists: ", len(all_artists))
-            print("Search artists: ", len(search_artists))
+            #all_artists = get_json("all_artists.json")
+            #search_artists = get_json("search_artists.json")
+            #print("All artists: ", len(all_artists))
+            #print("Search artists: ", len(search_artists))
         
 
-            if len(search_artists) == 0:
+            if get_table_length("search_artists") == 0:
                 break
 
+            current_artist = get_first_artist("search_artists")
+            print(current_artist[0])
+            exit(0)
+
+
             # Get the artist to search for and remove it from the search file
-            current_artist_id, current_artist_data = next(iter(search_artists.keys())), next(iter(search_artists.values()))
+            #current_artist_id, current_artist_data = next(iter(search_artists.keys())), next(iter(search_artists.values()))
             delete_json(current_artist_id, "search_artists.json")
 
             # maximum 180 requests per minute
@@ -64,13 +71,16 @@ def find_all_artists(token, start_time):
 def add_new_artist(token):
     artist_name = input("Enter artist name: ")
     artist= get_artist(token, artist_name)
+    artists = []
     for a in artist:
-        artist_id, artist_data = create_artist_data(a)
-        write_json(artist_id, artist_data, "search_artists.json")
+        artists.append(create_artist_data(a))
+        insert_artist_data(artists, "search_artists")
+        #write_json(artist_id, artist_data, "search_artists.json")
+
 
 def create_artist_data(artist):
-    artist_id = artist["id"]
     artist_data = {
+        "id": artist["id"],
         "name": artist["name"],
         "genres": artist["genres"],
         "popularity": artist["popularity"],
@@ -78,15 +88,29 @@ def create_artist_data(artist):
         "related_artists": []
         }
     
-    return artist_id, artist_data
+    return artist_data
 
 
     
 
 
 
+
 if __name__ == '__main__':
     token = get_token()
+
+    if input("Delete tables? y/n") == "y":
+        delete_table("search_artists")
+        delete_table("all_artists")
+        delete_table("artist_relationships")
+        delete_table("genre_relationships")
+    create_tables()
+ 
+    
+
+    
+    
+
     input_new = input("New artist?? y/n")
     if input_new == "y":
         add_new_artist(token)
