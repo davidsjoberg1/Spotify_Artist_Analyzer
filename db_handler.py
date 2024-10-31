@@ -11,13 +11,14 @@ def create_tables():
                    is_searched boolean
                        )''')
     cursor.execute('''CREATE TABLE IF NOT EXISTS artist_relationships (
-                   artist_id text PRIMARY KEY REFERENCES all_artists(artist_id),
-                   related_artists text
-                       )''')
+                   artist_id TEXT REFERENCES all_artists(artist_id),
+                   related_artist_id TEXT REFERENCES all_artists(artist_id),
+                   PRIMARY KEY (artist_id, related_artist_id)
+                 )''')
     cursor.execute('''CREATE TABLE IF NOT EXISTS genre_relationships (
-                   id integer PRIMARY KEY AUTOINCREMENT,
                    artist_id text REFERENCES all_artists(artist_id),
-                   genre text
+                   genre text,
+                   PRIMARY KEY (artist_id, genre)
                    )''')
     conn.commit()
     conn.close()
@@ -37,17 +38,13 @@ def insert_artist_data(data_lst, table, conn, cursor):
     insert_genre_relationships(data_lst, conn, cursor)
     conn.commit()
 
-
-
 def insert_related_artists(artist_id, related_artists, conn, cursor):
-    related_artists_data = [(artist_id, related_artist["id"]) for related_artist in related_artists]
+    data_lst = [(artist_id, related_artist["id"]) for related_artist in related_artists]
     cursor.executemany(f'''INSERT OR REPLACE INTO artist_relationships
-                       (artist_id, related_artists) 
-                       VALUES (?, ?)''',
-                       related_artists_data)
+                    (artist_id, related_artist_id)
+                    VALUES (?, ?)''',
+                    data_lst)
     conn.commit()
-
-
         
 
 def insert_genre_relationships(data_lst, conn, cursor):

@@ -36,7 +36,7 @@ def find_all_artists(token, start_time):
                 time_diff = datetime.now().timestamp() - counter_time
                 if time_diff < 15:
                     print("Sleeping for: ", 15 - time_diff, " seconds")
-                    time.sleep(30 - time_diff)
+                    time.sleep(15 - time_diff)
                 counter_time = datetime.now().timestamp()
                 counter = 0
         
@@ -59,7 +59,7 @@ def find_all_artists(token, start_time):
             set_is_searched(current_artist[0], True, conn, cursor)
             counter += 1
             conn.close()
-            exit(0)
+
 
 
     except KeyboardInterrupt:
