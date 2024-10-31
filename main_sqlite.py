@@ -13,12 +13,16 @@ def find_all_artists(token, start_time):
     Searches through all related artists of the artists in the search file, 
     and continues to search until all artists have been evaluated
     """
-    counter = 0
+
     counter_time = datetime.now().timestamp()
     thousand_time = datetime.now().timestamp()
 
     try:
         while True:
+            # Token will be expired after 3600 seconds
+            if datetime.now().timestamp() - start_time > 3000:
+                break
+
             conn = sqlite3.connect('artists.db')
             cursor = conn.cursor()
 
@@ -26,19 +30,13 @@ def find_all_artists(token, start_time):
             if all_searched % 1000 == 0:
                 write_json(all_searched, str(round((datetime.now().timestamp() - thousand_time)/60, 2)) + " minutes", "time.json")
                 thousand_time = datetime.now().timestamp()
-            
-
-            # Token will be expired after 3600 seconds
-            if datetime.now().timestamp() - start_time > 3000:
-                break
              # maximum 180 requests per minute
-            if counter == 45:
+            if all_searched % 45 == 0:
                 time_diff = datetime.now().timestamp() - counter_time
                 if time_diff < 15:
                     print("Sleeping for: ", 15 - time_diff, " seconds")
                     time.sleep(15 - time_diff)
                 counter_time = datetime.now().timestamp()
-                counter = 0
         
 
             if len(get_all_searched(0, cursor)) == 0:
@@ -57,7 +55,6 @@ def find_all_artists(token, start_time):
             insert_related_artists(current_artist[0], trimmed_related_artists, conn, cursor)
             
             set_is_searched(current_artist[0], True, conn, cursor)
-            counter += 1
             conn.close()
 
 
