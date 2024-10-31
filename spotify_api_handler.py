@@ -36,7 +36,7 @@ def get_auth_header(token):
 
 
 
-def get_artist(token, artist_name):
+def get_artist_spotify(token, artist_name):
     """
     Make a GET request to the Spotify API for the artist with the given name
     :param token: The access token
@@ -54,7 +54,7 @@ def get_artist(token, artist_name):
 
 
 
-def get_related_artists(token, id):
+def get_related_artists_spotify(token, id):
     """
     Make a GET request to the Spotify API for the related artists of the artist with the given id
     :param token: The access token

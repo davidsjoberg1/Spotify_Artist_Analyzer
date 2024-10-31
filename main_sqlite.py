@@ -1,9 +1,10 @@
 from datetime import datetime
 import time
-from spotify_api_handler import get_token, get_artist, get_related_artists
+from spotify_api_handler import get_token, get_artist_spotify, get_related_artists_spotify
 import requests
 import sqlite3
 from db_handler import *
+from json_handler import write_json
 
 
 
@@ -14,54 +15,53 @@ def find_all_artists(token, start_time):
     """
     counter = 0
     counter_time = datetime.now().timestamp()
+    thousand_time = datetime.now().timestamp()
+
     try:
         while True:
+            conn = sqlite3.connect('artists.db')
+            cursor = conn.cursor()
+
+            all_searched = len(get_all_searched(1, cursor))
+            if all_searched % 1000 == 0:
+                write_json(all_searched, str(round((datetime.now().timestamp() - thousand_time)/60, 2)) + " minutes", "time.json")
+                thousand_time = datetime.now().timestamp()
+            
+
             # Token will be expired after 3600 seconds
             if datetime.now().timestamp() - start_time > 3000:
                 break
-            
-            # Accessing all_artists.json and search_artists
-            #all_artists = get_json("all_artists.json")
-            #search_artists = get_json("search_artists.json")
-            #print("All artists: ", len(all_artists))
-            #print("Search artists: ", len(search_artists))
-        
-
-            if get_table_length("search_artists") == 0:
-                break
-
-            current_artist = get_first_artist("search_artists")
-            print(current_artist[0])
-            exit(0)
-
-
-            # Get the artist to search for and remove it from the search file
-            #current_artist_id, current_artist_data = next(iter(search_artists.keys())), next(iter(search_artists.values()))
-            delete_json(current_artist_id, "search_artists.json")
-
-            # maximum 180 requests per minute
-            if counter == 90:
+             # maximum 180 requests per minute
+            if counter == 45:
                 time_diff = datetime.now().timestamp() - counter_time
-                if time_diff < 30:
+                if time_diff < 15:
+                    print("Sleeping for: ", 15 - time_diff, " seconds")
                     time.sleep(30 - time_diff)
                 counter_time = datetime.now().timestamp()
                 counter = 0
+        
 
-            # Get related artists, add them to the current artist and write to all_artists file
-            related_artists = get_related_artists(token, current_artist_id)
+            if len(get_all_searched(0, cursor)) == 0:
+                break
+
+            current_artist = get_first_not_searched_artist(cursor)
+            if all_searched % 10 == 0:
+                print("Current artist: ", current_artist, " All searched: ", all_searched)
+            related_artists = get_related_artists_spotify(token, current_artist[0])
             trimmed_related_artists = []
-            for artist in related_artists:
-                artist_id, artist_data = create_artist_data(artist)
-                trimmed_related_artists.append({artist_id: artist_data})
-            current_artist_data["related_artists"] = trimmed_related_artists
-            write_json(current_artist_id, current_artist_data, "all_artists.json")
+            for related_artist in related_artists:
+                if not get_artist(related_artist["id"], cursor):
+                    trimmed_related_artists.append(create_artist_data(related_artist))
+            
+            insert_artist_data(trimmed_related_artists, "all_artists", conn, cursor)
+            insert_related_artists(current_artist[0], trimmed_related_artists, conn, cursor)
+            
+            set_is_searched(current_artist[0], True, conn, cursor)
             counter += 1
+            conn.close()
+            exit(0)
 
-            # Every artist that has not been evaluated will be added to the search file
-            for artist in related_artists:
-                if artist["id"] not in all_artists:
-                    artist_id, artist_data = create_artist_data(artist)
-                    write_json(artist_id, artist_data, "search_artists.json")
+
     except KeyboardInterrupt:
         print("Exiting...")
         exit(0)
@@ -70,12 +70,16 @@ def find_all_artists(token, start_time):
 
 def add_new_artist(token):
     artist_name = input("Enter artist name: ")
-    artist= get_artist(token, artist_name)
+    artist = get_artist_spotify(token, artist_name)
     artists = []
     for a in artist:
         artists.append(create_artist_data(a))
-        insert_artist_data(artists, "search_artists")
-        #write_json(artist_id, artist_data, "search_artists.json")
+    conn = sqlite3.connect('artists.db')
+    cursor = conn.cursor()
+    insert_artist_data(artists, "all_artists", conn, cursor)
+    conn.close()
+    
+
 
 
 def create_artist_data(artist):
@@ -85,7 +89,8 @@ def create_artist_data(artist):
         "genres": artist["genres"],
         "popularity": artist["popularity"],
         "followers": artist["followers"]["total"], 
-        "related_artists": []
+        "related_artists": [],
+        "is_searched": False
         }
     
     return artist_data
@@ -98,12 +103,15 @@ def create_artist_data(artist):
 
 if __name__ == '__main__':
     token = get_token()
+    
+
 
     if input("Delete tables? y/n") == "y":
-        delete_table("search_artists")
-        delete_table("all_artists")
-        delete_table("artist_relationships")
         delete_table("genre_relationships")
+        delete_table("artist_relationships")
+        delete_table("all_artists")
+ 
+
     create_tables()
  
     
@@ -114,6 +122,7 @@ if __name__ == '__main__':
     input_new = input("New artist?? y/n")
     if input_new == "y":
         add_new_artist(token)
+    
     
     while True:
         token = get_token()
