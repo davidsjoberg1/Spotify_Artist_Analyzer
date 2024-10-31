@@ -48,11 +48,11 @@ def find_all_artists(token, start_time):
             related_artists = get_related_artists_spotify(token, current_artist[0])
             trimmed_related_artists = []
             for related_artist in related_artists:
-                if not get_artist(related_artist["id"], cursor):
+                if not get_artist(related_artist["id"], cursor) :
                     trimmed_related_artists.append(create_artist_data(related_artist))
             
             insert_artist_data(trimmed_related_artists, "all_artists", conn, cursor)
-            insert_related_artists(current_artist[0], trimmed_related_artists, conn, cursor)
+            insert_related_artists(current_artist[0], related_artists, conn, cursor)
             
             set_is_searched(current_artist[0], True, conn, cursor)
             conn.close()
