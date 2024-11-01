@@ -13,11 +13,12 @@ def find_all_artists(token):
     and continues to search until all artists have been evaluated
     """
 
-    counter_time = datetime.now().timestamp()
     thousand_time = datetime.now().timestamp()
+    start_time = datetime.now().timestamp()
 
     try:
         while True:
+            counter_time = datetime.now().timestamp() - start_time
             conn = sqlite3.connect('data/artists.db')
             cursor = conn.cursor()
 
@@ -32,11 +33,15 @@ def find_all_artists(token):
                 print("Total number of artist relationships found: ", get_table_length("artist_relationships", cursor))
                 conn.close()
                 return True
-            
+
+            if counter_time >= 3000:
+                start_time = datetime.now().timestamp()
+                token = get_token()
+
             if num_all_searched % 1000 == 0:
                 write_json(num_all_searched, str(round((datetime.now().timestamp() - thousand_time)/60, 2)) + " minutes", "data/time.json")
                 thousand_time = datetime.now().timestamp()
-                token = get_token()
+
              # maximum 60 requests per minute
             if num_all_searched % 15 == 0:
                 time_diff = datetime.now().timestamp() - counter_time
