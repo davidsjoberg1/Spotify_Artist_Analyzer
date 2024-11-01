@@ -36,6 +36,7 @@ def find_all_artists(token):
             if num_all_searched % 1000 == 0:
                 write_json(num_all_searched, str(round((datetime.now().timestamp() - thousand_time)/60, 2)) + " minutes", "data/time.json")
                 thousand_time = datetime.now().timestamp()
+                token = get_token()
              # maximum 60 requests per minute
             if num_all_searched % 15 == 0:
                 time_diff = datetime.now().timestamp() - counter_time
