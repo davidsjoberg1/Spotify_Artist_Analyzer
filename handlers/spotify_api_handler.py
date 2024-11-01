@@ -42,7 +42,7 @@ def get_auth_header(token):
 
 
 
-def get_artist_spotify(token, artist_name):
+def get_artist_spotify(token, artist_name, limit=20):
     """
     Make a GET request to the Spotify API for the artist with the given name
     :param token: The access token
@@ -52,7 +52,7 @@ def get_artist_spotify(token, artist_name):
     
     url = "https://api.spotify.com/v1/search"
     headers = get_auth_header(token)
-    query = f"?q={artist_name}&type=artist&limit=20"
+    query = f"?q={artist_name}&type=artist&limit={limit}"
     query_url = url + query
     try:
         result = get(query_url, headers=headers)

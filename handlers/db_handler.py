@@ -108,5 +108,10 @@ def get_all_genres(cursor):
     genres = cursor.fetchall()
     return genres
 
+def get_related_artists(artist_id, cursor):
+    cursor.execute(f"SELECT related_artist_id FROM artist_relationships WHERE artist_id = '{artist_id}'")
+    related_artists = cursor.fetchall()
+    return related_artists
+
     
 
