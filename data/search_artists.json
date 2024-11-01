@@ -1,149 +1,4 @@
 {
-    "7Ey4PD4MYsKc5I2dolUwbH": {
-        "name": "Aerosmith",
-        "genres": [
-            "album rock",
-            "classic rock",
-            "hard rock",
-            "rock"
-        ],
-        "popularity": 77,
-        "followers": 14732776,
-        "related_artists": []
-    },
-    "3BmGtnKgCSGYIUhmivXKWX": {
-        "name": "Kelly Clarkson",
-        "genres": [
-            "dance pop",
-            "pop",
-            "talent show"
-        ],
-        "popularity": 74,
-        "followers": 10613597,
-        "related_artists": []
-    },
-    "1KCSPY1glIKqW2TotWuXOR": {
-        "name": "P!nk",
-        "genres": [
-            "dance pop",
-            "pop"
-        ],
-        "popularity": 82,
-        "followers": 17243309,
-        "related_artists": []
-    },
-    "3whuHq0yGx60atvA2RCVRW": {
-        "name": "Olly Murs",
-        "genres": [
-            "dance pop",
-            "pop",
-            "talent show",
-            "uk pop"
-        ],
-        "popularity": 67,
-        "followers": 3210324,
-        "related_artists": []
-    },
-    "2NhdGz9EDv2FeUw6udu2g1": {
-        "name": "The Wanted",
-        "genres": [
-            "boy band",
-            "dance pop",
-            "pop",
-            "post-teen pop"
-        ],
-        "popularity": 65,
-        "followers": 2494700,
-        "related_artists": []
-    },
-    "6S2OmqARrzebs0tKUEyXyp": {
-        "name": "Demi Lovato",
-        "genres": [
-            "pop",
-            "post-teen pop"
-        ],
-        "popularity": 78,
-        "followers": 26769545,
-        "related_artists": []
-    },
-    "0p4nmQO2msCgU4IF37Wi3j": {
-        "name": "Avril Lavigne",
-        "genres": [
-            "canadian pop",
-            "candy pop",
-            "dance pop",
-            "pop"
-        ],
-        "popularity": 78,
-        "followers": 11343057,
-        "related_artists": []
-    },
-    "2gsggkzM5R49q6jpPvazou": {
-        "name": "Jessie J",
-        "genres": [
-            "dance pop",
-            "pop"
-        ],
-        "popularity": 73,
-        "followers": 11779765,
-        "related_artists": []
-    },
-    "0X2BH1fck6amBIoJhDVmmJ": {
-        "name": "Ellie Goulding",
-        "genres": [
-            "indietronica",
-            "metropopolis",
-            "pop",
-            "uk pop"
-        ],
-        "popularity": 80,
-        "followers": 12623878,
-        "related_artists": []
-    },
-    "6dJeKm76NjfXBNTpHmOhfO": {
-        "name": "Selena Gomez & The Scene",
-        "genres": [
-            "pop"
-        ],
-        "popularity": 69,
-        "followers": 9903543,
-        "related_artists": []
-    },
-    "1dIdBZaaHRW2bDTkHNfWln": {
-        "name": "The Veronicas",
-        "genres": [
-            "australian pop",
-            "candy pop",
-            "dance pop",
-            "girl group",
-            "post-teen pop"
-        ],
-        "popularity": 57,
-        "followers": 965775,
-        "related_artists": []
-    },
-    "1l7ZsJRRS8wlW3WfJfPfNS": {
-        "name": "Christina Aguilera",
-        "genres": [
-            "dance pop",
-            "pop"
-        ],
-        "popularity": 79,
-        "followers": 8548301,
-        "related_artists": []
-    },
-    "0kkxsdcaWmWU2yWAqclDh4": {
-        "name": "Rixton",
-        "genres": [
-            "post-teen pop",
-            "talent show",
-            "teen pop",
-            "viral pop"
-        ],
-        "popularity": 61,
-        "followers": 755063,
-        "related_artists": []
-    },
     "5CCwRZC6euC8Odo6y9X8jr": {
         "name": "Rita Ora",
         "genres": [
@@ -6271,6 +6126,200 @@
         ],
         "popularity": 64,
         "followers": 380477,
+        "related_artists": []
+    },
+    "7zLm9op6LgPqKL62d1FzhO": {
+        "name": "ADAAM",
+        "genres": [
+            "swedish hip hop",
+            "swedish trap pop"
+        ],
+        "popularity": 60,
+        "followers": 191743,
+        "related_artists": []
+    },
+    "2loEsOijJ6XiGzWYFXMIRk": {
+        "name": "Adam Port",
+        "genres": [
+            "melodic house"
+        ],
+        "popularity": 77,
+        "followers": 211373,
+        "related_artists": []
+    },
+    "4bYPcJP5jwMhSivRcqie2n": {
+        "name": "Adam Levine",
+        "genres": [
+            "deep talent show"
+        ],
+        "popularity": 73,
+        "followers": 1021045,
+        "related_artists": []
+    },
+    "4fZ8AuVP6Y8mLmCoybfKpC": {
+        "name": "Adam Calhoun",
+        "genres": [
+            "country rap",
+            "military rap",
+            "redneck"
+        ],
+        "popularity": 61,
+        "followers": 642224,
+        "related_artists": []
+    },
+    "6prmLEyn4LfHlD9NnXWlf7": {
+        "name": "Adam Lambert",
+        "genres": [
+            "dance pop",
+            "idol",
+            "pop",
+            "post-teen pop"
+        ],
+        "popularity": 61,
+        "followers": 1626575,
+        "related_artists": []
+    },
+    "3Z02hBLubJxuFJfhacLSDc": {
+        "name": "Bryan Adams",
+        "genres": [
+            "canadian pop",
+            "canadian singer-songwriter",
+            "classic canadian rock",
+            "heartland rock",
+            "mellow gold",
+            "soft rock"
+        ],
+        "popularity": 77,
+        "followers": 3908429,
+        "related_artists": []
+    },
+    "4NsVVzuaZGk4aya8Pyacew": {
+        "name": "Adam Doleac",
+        "genres": [
+            "contemporary country",
+            "country pop",
+            "modern country pop"
+        ],
+        "popularity": 52,
+        "followers": 81355,
+        "related_artists": []
+    },
+    "7ymrIsmp4vE7vAtcS12J4D": {
+        "name": "Adam Jensen",
+        "genres": [
+            "modern alternative rock",
+            "rebel blues"
+        ],
+        "popularity": 54,
+        "followers": 188481,
+        "related_artists": []
+    },
+    "3dctbbXhrRgigX1icexnws": {
+        "name": "Adam Hicks",
+        "genres": [],
+        "popularity": 53,
+        "followers": 49767,
+        "related_artists": []
+    },
+    "2NkpmkcWNxbWydBaETRfqT": {
+        "name": "Adam Gontier",
+        "genres": [],
+        "popularity": 53,
+        "followers": 33966,
+        "related_artists": []
+    },
+    "0K2mOIo1scrrzg1IWBOnre": {
+        "name": "Adam Hart",
+        "genres": [],
+        "popularity": 53,
+        "followers": 874,
+        "related_artists": []
+    },
+    "54tv11ndFfiqXiR03PwdlB": {
+        "name": "Adam Melchor",
+        "genres": [
+            "indie pop",
+            "modern indie folk",
+            "new jersey indie"
+        ],
+        "popularity": 51,
+        "followers": 117252,
+        "related_artists": []
+    },
+    "0bvwPCit9Yh0yVdLKGnXRi": {
+        "name": "Adam Pascal",
+        "genres": [
+            "broadway",
+            "hollywood",
+            "show tunes"
+        ],
+        "popularity": 50,
+        "followers": 18001,
+        "related_artists": []
+    },
+    "0eNiH722ChBnOwAjXcKDYI": {
+        "name": "Adam Storme",
+        "genres": [
+            "rain"
+        ],
+        "popularity": 50,
+        "followers": 362,
+        "related_artists": []
+    },
+    "1g4J8P1JWwanNyyXckRX5W": {
+        "name": "Adamlar",
+        "genres": [
+            "turkish rock"
+        ],
+        "popularity": 63,
+        "followers": 2031095,
+        "related_artists": []
+    },
+    "1btv9qmIpbp7q1ixCYNdHu": {
+        "name": "Adam Beyer",
+        "genres": [
+            "dark techno",
+            "minimal techno",
+            "raw techno",
+            "schranz",
+            "swedish electronic",
+            "swedish techno",
+            "techno"
+        ],
+        "popularity": 55,
+        "followers": 335652,
+        "related_artists": []
+    },
+    "05tmGPn4fFdVpnsMt0YW5S": {
+        "name": "Adam Ten",
+        "genres": [
+            "israeli techno"
+        ],
+        "popularity": 52,
+        "followers": 30595,
+        "related_artists": []
+    },
+    "4pOrJdD2VR7VOfR5mWWpzR": {
+        "name": "Adacama Dream",
+        "genres": [],
+        "popularity": 41,
+        "followers": 5125,
+        "related_artists": []
+    },
+    "0zunRmlTZRpXoTPWdlI0Do": {
+        "name": "Adam Dannheisser",
+        "genres": [],
+        "popularity": 45,
+        "followers": 509,
+        "related_artists": []
+    },
+    "2LB9H0px4qWbCHg9Axzhga": {
+        "name": "Adam Sandler",
+        "genres": [
+            "comic"
+        ],
+        "popularity": 43,
+        "followers": 169572,
         "related_artists": []
     }
 }

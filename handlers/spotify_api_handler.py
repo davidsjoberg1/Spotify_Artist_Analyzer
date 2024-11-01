@@ -78,9 +78,10 @@ def get_related_artists_spotify(token, id):
     """
     try:
         url = "https://api.spotify.com/v1/artists/" + str(id) + "/related-artists"
-        headers = get_auth_header(token + "a")
+        headers = get_auth_header(token)
         result = get(url, headers=headers)
         if result.status_code != 200:
+
             token = error_handler(result)
             return get_related_artists_spotify(token, id)
             
@@ -101,12 +102,13 @@ def error_handler(result):
     """
     print("Error: ", result.status_code)
     print("Current time: ", datetime.now()) 
-    print("Response: ", result.headers["error_description"])
+    print("Response: ", result.headers)
 
     if result.status_code == 429:
         print("Sleeping for: ", result.headers["retry-after"], " seconds = ", round(int(result.headers["retry-after"])/3600, 2), " hours")
         print("Starting again: ", datetime.fromtimestamp(datetime.now().timestamp() + int(result.headers["retry-after"])))
-        time.sleep(int(result.headers["retry-after"]) + 10)
+        time.sleep(int(result.headers["retry-after"]))
+    time.sleep(5)
     return get_token()
     
 

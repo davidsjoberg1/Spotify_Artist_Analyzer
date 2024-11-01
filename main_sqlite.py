@@ -1,9 +1,9 @@
 from datetime import datetime
 import time
-from spotify_api_handler import get_token, get_artist_spotify, get_related_artists_spotify
+from handlers.spotify_api_handler import get_token, get_artist_spotify, get_related_artists_spotify
 import sqlite3
-from db_handler import *
-from json_handler import write_json
+from handlers.db_handler import *
+from handlers.json_handler import write_json
 
 
 
@@ -18,7 +18,7 @@ def find_all_artists(token):
 
     try:
         while True:
-            conn = sqlite3.connect('artists.db')
+            conn = sqlite3.connect('data/artists.db')
             cursor = conn.cursor()
 
             num_all_searched = len(get_all_searched(1, cursor))
@@ -34,10 +34,10 @@ def find_all_artists(token):
                 return True
             
             if num_all_searched % 1000 == 0:
-                write_json(num_all_searched, str(round((datetime.now().timestamp() - thousand_time)/60, 2)) + " minutes", "time.json")
+                write_json(num_all_searched, str(round((datetime.now().timestamp() - thousand_time)/60, 2)) + " minutes", "data/time.json")
                 thousand_time = datetime.now().timestamp()
-             # maximum 180 requests per minute
-            if num_all_searched % 45 == 0:
+             # maximum 60 requests per minute
+            if num_all_searched % 15 == 0:
                 time_diff = datetime.now().timestamp() - counter_time
                 if time_diff < 15:
                     print("Sleeping for: ", 15 - time_diff, " seconds")
@@ -72,7 +72,7 @@ def add_new_artist(token):
     artists = []
     for a in artist:
         artists.append(create_artist_data(a))
-    conn = sqlite3.connect('artists.db')
+    conn = sqlite3.connect('data/artists.db')
     cursor = conn.cursor()
     insert_artist_data(artists, "all_artists", conn, cursor)
     conn.close()    
@@ -94,11 +94,11 @@ def create_artist_data(artist):
 
 if __name__ == '__main__':
     if input("Delete tables? y/n") == "y":
-        conn = sqlite3.connect('artists.db')
+        conn = sqlite3.connect('data/artists.db')
         cursor = conn.cursor()
-        delete_table("genre_relationships")
-        delete_table("artist_relationships")
-        delete_table("all_artists")
+        delete_table("genre_relationships", conn, cursor)
+        delete_table("artist_relationships", conn, cursor)
+        delete_table("all_artists", conn, cursor)
         conn.close()
     create_tables()
 

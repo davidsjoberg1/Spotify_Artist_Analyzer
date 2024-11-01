@@ -1,7 +1,7 @@
 import sqlite3
 
 def create_tables():
-    conn = sqlite3.connect('artists.db')
+    conn = sqlite3.connect('data/artists.db')
     cursor = conn.cursor()
     cursor.execute('''CREATE TABLE IF NOT EXISTS all_artists (
                    artist_id text PRIMARY KEY,
