@@ -1,0 +1,8 @@
+In this file there are databases that conatin data which can be done for testing:
+
+artists_4700.db:
+Contains:
+    16758 artists where 4738 of them have been searched
+    94520 artists realtionships
+    20783 genre realtionships
+    
