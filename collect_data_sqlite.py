@@ -15,10 +15,11 @@ def find_all_artists(token):
 
     thousand_time = datetime.now().timestamp()
     start_time = datetime.now().timestamp()
+    counter_time = datetime.now().timestamp()
+
 
     try:
         while True:
-            counter_time = datetime.now().timestamp() - start_time
             conn = sqlite3.connect('data/artists.db')
             cursor = conn.cursor()
 
@@ -34,7 +35,7 @@ def find_all_artists(token):
                 conn.close()
                 return True
 
-            if counter_time >= 3000:
+            if datetime.now().timestamp() - start_time >= 3000:
                 start_time = datetime.now().timestamp()
                 token = get_token()
 
