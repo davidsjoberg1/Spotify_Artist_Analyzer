@@ -43,8 +43,8 @@ def find_all_artists(token):
                 write_json(num_all_searched, str(round((datetime.now().timestamp() - thousand_time)/60, 2)) + " minutes", "data/time.json")
                 thousand_time = datetime.now().timestamp()
 
-             # maximum 40 requests per minute
-            if num_all_searched % 10 == 0:
+             # maximum 20 requests per minute
+            if num_all_searched % 5 == 0:
                 time_diff = datetime.now().timestamp() - counter_time
                 if time_diff < 15:
                     print("Sleeping for: ", 15 - time_diff, " seconds")
