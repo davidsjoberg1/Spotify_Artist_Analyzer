@@ -1,8 +1,8 @@
 import sqlite3
 
-def create_tables():
-    conn = sqlite3.connect('data/artists.db')
-    cursor = conn.cursor()
+db_path = '../../../../media/davidsjoberg/RB_DB/spotify_data/artists.db'
+
+def create_tables(conn, cursor):
     cursor.execute('''CREATE TABLE IF NOT EXISTS all_artists (
                    artist_id text PRIMARY KEY,
                    name text,
@@ -21,7 +21,6 @@ def create_tables():
                    PRIMARY KEY (artist_id, genre)
                    )''')
     conn.commit()
-    conn.close()
 
 
 def insert_artist_data(data_lst, table, conn, cursor):

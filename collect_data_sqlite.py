@@ -5,7 +5,7 @@ import sqlite3
 from handlers.db_handler import *
 from handlers.json_handler import write_json
 
-
+db_path = '../../../../media/davidsjoberg/RB_DB/spotify_data/artists.db'
 
 def find_all_artists(token):
     """
@@ -19,9 +19,9 @@ def find_all_artists(token):
 
 
     try:
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
         while True:
-            conn = sqlite3.connect('data/artists.db')
-            cursor = conn.cursor()
 
             num_all_searched = len(get_all_searched(1, cursor))
             current_artist = get_first_not_searched_artist(cursor)
@@ -51,6 +51,9 @@ def find_all_artists(token):
                     time.sleep(15 - time_diff)
                 counter_time = datetime.now().timestamp()
             if num_all_searched % 100 == 0:
+                conn.close()
+                conn = sqlite3.connect(db_path)
+                cursor = conn.cursor()
                 print("Current artist: ", current_artist, " All searched: ", num_all_searched)
         
 
@@ -67,9 +70,9 @@ def find_all_artists(token):
             insert_related_artists(current_artist[0], related_artists, conn, cursor)
             
             set_is_searched(current_artist[0], True, conn, cursor)
-            conn.close()
 
     except KeyboardInterrupt:
+        conn.close()
         print("Exiting...")
         exit(0)
 
@@ -79,7 +82,7 @@ def add_new_artist(token):
     artists = []
     for a in artist:
         artists.append(create_artist_data(a))
-    conn = sqlite3.connect('data/artists.db')
+    conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
     insert_artist_data(artists, "all_artists", conn, cursor)
     conn.close()    
@@ -100,21 +103,20 @@ def create_artist_data(artist):
 
 
 if __name__ == '__main__':
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
     if input("Delete tables? y/n") == "y":
-        conn = sqlite3.connect('data/artists.db')
-        cursor = conn.cursor()
         delete_table("genre_relationships", conn, cursor)
         delete_table("artist_relationships", conn, cursor)
         delete_table("all_artists", conn, cursor)
-        conn.close()
-    create_tables()
+    create_tables(conn, cursor)
 
     token = get_token()
     input_new = input("New artist?? y/n")
     if input_new == "y":
         
         add_new_artist(token)
-        
+    conn.close()
     while True:
         stop = find_all_artists(token)
         if stop:
