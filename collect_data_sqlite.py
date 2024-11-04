@@ -5,9 +5,12 @@ import sqlite3
 from handlers.db_handler import *
 from handlers.json_handler import write_json
 
-db_path = '../../../../media/davidsjoberg/RB_DB/spotify_data/artists.db'
+DB_PATH = '../../../../media/davidsjoberg/RB_DB/spotify_data/artists.db'
+#DB_PATH = 'data/artists.db'
+NO_APPS = 3
 
-def find_all_artists(token):
+
+def find_all_artists():
     """
     Searches through all related artists of the artists in the search file, 
     and continues to search until all artists have been evaluated
@@ -16,10 +19,11 @@ def find_all_artists(token):
     thousand_time = datetime.now().timestamp()
     start_time = datetime.now().timestamp()
     counter_time = datetime.now().timestamp()
-
+    token_counter = 2
+    token = get_token(token_counter)
 
     try:
-        conn = sqlite3.connect(db_path)
+        conn = sqlite3.connect(DB_PATH)
         cursor = conn.cursor()
         while True:
 
@@ -35,6 +39,7 @@ def find_all_artists(token):
                 conn.close()
                 return True
 
+            
             if datetime.now().timestamp() - start_time >= 3000:
                 start_time = datetime.now().timestamp()
                 token = get_token()
@@ -43,18 +48,24 @@ def find_all_artists(token):
                 write_json(num_all_searched, str(round((datetime.now().timestamp() - thousand_time)/60, 2)) + " minutes", "data/time.json")
                 thousand_time = datetime.now().timestamp()
 
-             # maximum 20 requests per minute
-            if num_all_searched % 5 == 0:
-                time_diff = datetime.now().timestamp() - counter_time
-                if time_diff < 15:
-                    print("Sleeping for: ", 15 - time_diff, " seconds")
-                    time.sleep(15 - time_diff)
-                counter_time = datetime.now().timestamp()
             if num_all_searched % 100 == 0:
                 conn.close()
-                conn = sqlite3.connect(db_path)
+                conn = sqlite3.connect(DB_PATH)
                 cursor = conn.cursor()
+                token = get_token(token_counter)
+                token_counter += 1
+                if token_counter > NO_APPS:
+                    token_counter = 1
                 print("Current artist: ", current_artist, " All searched: ", num_all_searched)
+
+            # 9600 requests per day 
+            time_diff = datetime.now().timestamp() - counter_time
+            if time_diff < 9:
+                print("Sleeping for: ", 9 - time_diff, " seconds")
+                time.sleep(9 - time_diff)
+            counter_time = datetime.now().timestamp()
+                
+                
         
 
             related_artists = get_related_artists_spotify(token, current_artist[0])
@@ -82,7 +93,7 @@ def add_new_artist(token):
     artists = []
     for a in artist:
         artists.append(create_artist_data(a))
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     insert_artist_data(artists, "all_artists", conn, cursor)
     conn.close()    
@@ -103,7 +114,7 @@ def create_artist_data(artist):
 
 
 if __name__ == '__main__':
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     if input("Delete tables? y/n") == "y":
         delete_table("genre_relationships", conn, cursor)
@@ -118,7 +129,7 @@ if __name__ == '__main__':
         add_new_artist(token)
     conn.close()
     while True:
-        stop = find_all_artists(token)
+        stop = find_all_artists()
         if stop:
             break
 

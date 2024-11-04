@@ -1,6 +1,5 @@
 import sqlite3
 
-db_path = '../../../../media/davidsjoberg/RB_DB/spotify_data/artists.db'
 
 def create_tables(conn, cursor):
     cursor.execute('''CREATE TABLE IF NOT EXISTS all_artists (

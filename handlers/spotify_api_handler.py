@@ -8,13 +8,11 @@ from datetime import datetime
 
 load_dotenv()
 
-client_id = os.getenv("CLIENT_ID")
-client_secret = os.getenv("CLIENT_SECRET")
 
 
-def get_token():
+def get_token(token_counter=1):
     try:
-        auth_string = client_id + ":" + client_secret
+        auth_string = os.getenv("CLIENT_ID" + str(token_counter))+ ":" + os.getenv("CLIENT_SECRET" + str(token_counter))
         auth_bytes = auth_string.encode('utf-8')
         auth_base64 = str(base64.b64encode(auth_bytes), "utf-8")
 
