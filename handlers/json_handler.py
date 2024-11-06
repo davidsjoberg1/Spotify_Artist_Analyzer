@@ -9,11 +9,15 @@ def get_json(filename):
     return None
 
 def write_json(key, value, filename):
-    with open(filename, 'r+') as file:
-        file_data = json.load(file)
-        file_data[key] = value
-        file.seek(0)
-        json.dump(file_data, file, indent=4)
+    try:
+        with open(filename, 'r+') as file:
+            file_data = json.load(file)
+            file_data[key] = value
+            file.seek(0)
+            json.dump(file_data, file, indent=4)
+    except Exception as e:
+        print("Error: ", e)
+        pass
 
 
 

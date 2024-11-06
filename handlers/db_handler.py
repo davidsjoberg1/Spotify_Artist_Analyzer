@@ -101,6 +101,12 @@ def get_all_searched(is_searched, cursor):
     return artists
 
 
+def get_all_searched_count(is_searched, cursor):
+    cursor.execute(f"SELECT COUNT(*) FROM all_artists WHERE is_searched = {is_searched}")
+    count = cursor.fetchone()[0]
+    return count
+
+
 def get_all_genres(cursor):
     cursor.execute(f"SELECT DISTINCT genre FROM genre_relationships")
     genres = cursor.fetchall()

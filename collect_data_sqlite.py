@@ -5,9 +5,9 @@ import sqlite3
 from handlers.db_handler import *
 from handlers.json_handler import write_json
 
-DB_PATH = '../../../../media/davidsjoberg/RB_DB/spotify_data/artists.db'
+DB_PATH = '../artists.db'
 #DB_PATH = 'data/artists.db'
-NO_APPS = 3
+NO_APPS = 5
 
 
 def find_all_artists():
@@ -19,15 +19,17 @@ def find_all_artists():
     thousand_time = datetime.now().timestamp()
     start_time = datetime.now().timestamp()
     counter_time = datetime.now().timestamp()
-    token_counter = 2
+    token_counter = 5
     token = get_token(token_counter)
+    tot_eval_time = 0
+    counter = 0
 
     try:
         conn = sqlite3.connect(DB_PATH)
         cursor = conn.cursor()
         while True:
-
-            num_all_searched = len(get_all_searched(1, cursor))
+            counter += 1
+            num_all_searched = get_all_searched_count(1, cursor)
             current_artist = get_first_not_searched_artist(cursor)
            
 
@@ -39,10 +41,10 @@ def find_all_artists():
                 conn.close()
                 return True
 
-            
-            if datetime.now().timestamp() - start_time >= 3000:
-                start_time = datetime.now().timestamp()
-                token = get_token()
+            # Not needed??
+            #if datetime.now().timestamp() - start_time >= 3000:
+            #    start_time = datetime.now().timestamp()
+            #    token = get_token(token_counter)
 
             if num_all_searched % 1000 == 0:
                 write_json(num_all_searched, str(round((datetime.now().timestamp() - thousand_time)/60, 2)) + " minutes", "data/time.json")
@@ -58,11 +60,12 @@ def find_all_artists():
                     token_counter = 1
                 print("Current artist: ", current_artist, " All searched: ", num_all_searched)
 
-            # 9600 requests per day 
+            # 22 737 requests per day 
             time_diff = datetime.now().timestamp() - counter_time
-            if time_diff < 9:
-                print("Sleeping for: ", 9 - time_diff, " seconds")
-                time.sleep(9 - time_diff)
+            if time_diff < 3.8:
+                num_all_artists = get_table_length("all_artists", cursor)
+                print(f'AET: {round(tot_eval_time/counter, 3): <3}s  TC: {token_counter: <2}   Sleeping For: {round(3.8 - time_diff, 2): <4}s   All Searched:{num_all_searched: <8}   All Artists: {num_all_artists: <8}   ASA/AA: {round(num_all_searched/num_all_artists, 4): <4}   Current Artist: {current_artist[1]: <20}')
+                time.sleep(3.8 - time_diff)
             counter_time = datetime.now().timestamp()
                 
                 
@@ -81,6 +84,7 @@ def find_all_artists():
             insert_related_artists(current_artist[0], related_artists, conn, cursor)
             
             set_is_searched(current_artist[0], True, conn, cursor)
+            tot_eval_time += time_diff
 
     except KeyboardInterrupt:
         conn.close()
@@ -89,8 +93,9 @@ def find_all_artists():
 
 def add_new_artist(token):
     artist_name = input("Enter artist name: ")
-    artist = get_artist_spotify(token, artist_name)
+    artist = get_artist_spotify(token, artist_name, 1)
     artists = []
+    print(artists)
     for a in artist:
         artists.append(create_artist_data(a))
     conn = sqlite3.connect(DB_PATH)
