@@ -30,7 +30,12 @@ def find_all_artists():
             counter += 1
             num_all_searched = get_all_searched_count(1, cursor)
             current_artist = get_first_not_searched_artist(cursor)
-           
+
+            # 96 000 requests per day 
+            time_diff = datetime.now().timestamp() - counter_time
+            if time_diff < 0.9:
+                time.sleep(0.9 - time_diff)
+            counter_time = datetime.now().timestamp()
 
             if current_artist is None:
                 print("All artists searched")
@@ -45,6 +50,9 @@ def find_all_artists():
                 thousand_time = datetime.now().timestamp()
 
             if num_all_searched % 100 == 0:
+                num_all_artists = get_table_length("all_artists", cursor)
+                print(f'AET: {round(tot_eval_time/counter, 3): <3}s  TC: {token_counter: <2}   Sleeping For: {round(0.9 - time_diff, 2): <4}s   All Searched:{num_all_searched: <8}   All Artists: {num_all_artists: <8}   ASA/AA: {round(num_all_searched/num_all_artists, 4): <4}   Current Artist: {current_artist[1]: <20}')
+
                 conn.close()
                 conn = sqlite3.connect(DB_PATH)
                 cursor = conn.cursor()
@@ -52,15 +60,8 @@ def find_all_artists():
                 token_counter += 1
                 if token_counter > NO_APPS:
                     token_counter = 1
-                print("Current artist: ", current_artist, " All searched: ", num_all_searched)
+                #print("Current artist: ", current_artist, " All searched: ", num_all_searched)
 
-            # 96 000 requests per day 
-            time_diff = datetime.now().timestamp() - counter_time
-            if time_diff < 0.9:
-                num_all_artists = get_table_length("all_artists", cursor)
-                print(f'AET: {round(tot_eval_time/counter, 3): <3}s  TC: {token_counter: <2}   Sleeping For: {round(0.9 - time_diff, 2): <4}s   All Searched:{num_all_searched: <8}   All Artists: {num_all_artists: <8}   ASA/AA: {round(num_all_searched/num_all_artists, 4): <4}   Current Artist: {current_artist[1]: <20}')
-                time.sleep(0.9 - time_diff)
-            counter_time = datetime.now().timestamp()
                 
                 
         
