@@ -7,7 +7,7 @@ from handlers.json_handler import write_json
 
 DB_PATH = '../artists.db'
 #DB_PATH = 'data/artists.db'
-NO_APPS = 5
+NO_APPS = 10
 
 
 def find_all_artists():
@@ -19,7 +19,7 @@ def find_all_artists():
     thousand_time = datetime.now().timestamp()
     start_time = datetime.now().timestamp()
     counter_time = datetime.now().timestamp()
-    token_counter = 5
+    token_counter = 10
     token = get_token(token_counter)
     tot_eval_time = 0
     counter = 0
