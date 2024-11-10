@@ -7,7 +7,7 @@ from handlers.json_handler import write_json
 
 DB_PATH = '../artists.db'
 #DB_PATH = 'data/artists.db'
-NO_APPS = 20
+NO_APPS = 35
 
 
 def find_all_artists():
@@ -18,7 +18,7 @@ def find_all_artists():
 
     thousand_time = datetime.now().timestamp()
     counter_time = datetime.now().timestamp()
-    token_counter = 10
+    token_counter = 20
     token = get_token(token_counter)
     tot_eval_time = 0
     counter = 0
@@ -31,10 +31,10 @@ def find_all_artists():
             num_all_searched = get_all_searched_count(1, cursor)
             current_artist = get_first_not_searched_artist(cursor)
 
-            # 96 000 requests per day 
+            # 172 800 requests per day 
             time_diff = datetime.now().timestamp() - counter_time
-            if time_diff < 0.9:
-                time.sleep(0.9 - time_diff)
+            if time_diff < 0.5:
+                time.sleep(0.5 - time_diff)
             counter_time = datetime.now().timestamp()
 
             if current_artist is None:
@@ -51,7 +51,7 @@ def find_all_artists():
 
             if num_all_searched % 100 == 0:
                 num_all_artists = get_table_length("all_artists", cursor)
-                print(f'AET: {round(tot_eval_time/counter, 3): <3}s  TC: {token_counter: <2}   Sleeping For: {round(0.9 - time_diff, 2): <4}s   All Searched:{num_all_searched: <8}   All Artists: {num_all_artists: <8}   ASA/AA: {round(num_all_searched/num_all_artists, 4): <4}   Current Artist: {current_artist[1]: <20}')
+                print(f'AET: {round(tot_eval_time/counter, 3): <3}s  TC: {token_counter: <2}   Sleeping For: {round(0.5 - time_diff, 2): <4}s   All Searched:{num_all_searched: <8}   All Artists: {num_all_artists: <8}   ASA/AA: {round(num_all_searched/num_all_artists, 4): <4}   Current Artist: {current_artist[1]: <20}')
 
                 conn.close()
                 conn = sqlite3.connect(DB_PATH)
