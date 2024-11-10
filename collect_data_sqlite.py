@@ -7,7 +7,7 @@ from handlers.json_handler import write_json
 
 DB_PATH = '../artists.db'
 #DB_PATH = 'data/artists.db'
-NO_APPS = 10
+NO_APPS = 20
 
 
 def find_all_artists():
@@ -17,7 +17,6 @@ def find_all_artists():
     """
 
     thousand_time = datetime.now().timestamp()
-    start_time = datetime.now().timestamp()
     counter_time = datetime.now().timestamp()
     token_counter = 10
     token = get_token(token_counter)
@@ -41,11 +40,6 @@ def find_all_artists():
                 conn.close()
                 return True
 
-            # Not needed??
-            #if datetime.now().timestamp() - start_time >= 3000:
-            #    start_time = datetime.now().timestamp()
-            #    token = get_token(token_counter)
-
             if num_all_searched % 1000 == 0:
                 write_json(num_all_searched, str(round((datetime.now().timestamp() - thousand_time)/60, 2)) + " minutes", "data/time.json")
                 thousand_time = datetime.now().timestamp()
@@ -62,10 +56,10 @@ def find_all_artists():
 
             # 24 686 requests per day 
             time_diff = datetime.now().timestamp() - counter_time
-            if time_diff < 3.5:
+            if time_diff < 0.9:
                 num_all_artists = get_table_length("all_artists", cursor)
-                print(f'AET: {round(tot_eval_time/counter, 3): <3}s  TC: {token_counter: <2}   Sleeping For: {round(3.5 - time_diff, 2): <4}s   All Searched:{num_all_searched: <8}   All Artists: {num_all_artists: <8}   ASA/AA: {round(num_all_searched/num_all_artists, 4): <4}   Current Artist: {current_artist[1]: <20}')
-                time.sleep(3.5 - time_diff)
+                print(f'AET: {round(tot_eval_time/counter, 3): <3}s  TC: {token_counter: <2}   Sleeping For: {round(0.9 - time_diff, 2): <4}s   All Searched:{num_all_searched: <8}   All Artists: {num_all_artists: <8}   ASA/AA: {round(num_all_searched/num_all_artists, 4): <4}   Current Artist: {current_artist[1]: <20}')
+                time.sleep(0.9 - time_diff)
             counter_time = datetime.now().timestamp()
                 
                 
