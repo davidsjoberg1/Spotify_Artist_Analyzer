@@ -54,7 +54,7 @@ def find_all_artists():
                     token_counter = 1
                 print("Current artist: ", current_artist, " All searched: ", num_all_searched)
 
-            # 24 686 requests per day 
+            # 96 000 requests per day 
             time_diff = datetime.now().timestamp() - counter_time
             if time_diff < 0.9:
                 num_all_artists = get_table_length("all_artists", cursor)
