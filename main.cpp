@@ -1,37 +1,28 @@
 #include <iostream>
 #include <string>
+#include <array>
 
-// Declare any additional functions here
-void greetUser(const std::string &name);
+using namespace std;
 
 int main() {
     // Variable to store the user's name
-    std::string name;
+    string action;
+    array <string, 2> actions = {"Search", "Exit"};
 
-    // Output a welcome message
-    std::cout << "Welcome to the C++ Program!" << std::endl;
+    for (int i = 0; i < actions.size(); i++) {
+        cout << i + 1 << ". " << actions[i] << endl;
+    }
 
     // Prompt the user for their name
-    std::cout << "Please enter your name: ";
-    std::getline(std::cin, name);
+    cout << "Enter the desired action:";
+    getline(std::cin, action);
 
-    // Call a function to greet the user
-    greetUser(name);
-
-    // Main program logic here
-    int choice;
-    std::cout << "Choose an option:" << std::endl;
-    std::cout << "1. Say Hello" << std::endl;
-    std::cout << "2. Exit" << std::endl;
-    std::cout << "Enter your choice: ";
-    std::cin >> choice;
-
-    // Simple decision-making
-    if (choice == 1) {
-        std::cout << "Hello, " << name << "! Nice to meet you!" << std::endl;
-    } else {
-        std::cout << "Goodbye!" << std::endl;
+    if (action == "1"){
+        cout << "Search" << endl;
+    } else if (action == "2"){
+        cout << "Exit" << endl;
     }
+
 
     // End of program
     return 0;
