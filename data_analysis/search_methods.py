@@ -1,4 +1,7 @@
+from line_profiler import profile
 from handlers.db_handler import *
+from datetime import datetime
+
 
 
 def bfs(a1, a2, cursor):
@@ -11,10 +14,11 @@ def bfs(a1, a2, cursor):
     """
     explored = {a1: None}
     queue = [[a1]]
-    while queue:
+    while queue:        
         path = queue.pop(0)
         node = path[-1]
         if node == a2:
+            print("\n")
             return path
         for related_artist in get_related_artists(node, cursor):
             if related_artist[0] not in explored:
@@ -22,6 +26,10 @@ def bfs(a1, a2, cursor):
                 new_path = list(path)
                 new_path.append(related_artist[0])
                 queue.append(new_path)
+        print("len path: ", len(path), " len queue: ", len(queue), "len explored: ", len(explored), end="\r")
+        
+        
+
     return None
 
 
@@ -48,4 +56,5 @@ def dfs(a1, a2, cursor):
                 new_path = list(path)
                 new_path.append(related_artist[0])
                 stack.append(new_path)
+                
     return None
