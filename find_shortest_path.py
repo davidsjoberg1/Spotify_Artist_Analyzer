@@ -1,7 +1,7 @@
 from handlers.db_handler import *
 import sqlite3
 from handlers.spotify_api_handler import get_artist_spotify, get_token
-from data_analysis.search_methods import bfs, dfs
+from data_analysis.search_methods import bfs, dfs, get_all_lengths
 from datetime import datetime
 
 
@@ -29,6 +29,9 @@ def find_shortest_path(a1, a2, search_method, cursor, token):
             path = None
         elif search_method == "A*":
             path = None
+        elif search_method == "Get Lengths":
+            lenghts = get_all_lengths(a1, cursor)
+            return
 
         if path is None:
             print("No path found")
@@ -46,14 +49,14 @@ def find_shortest_path(a1, a2, search_method, cursor, token):
 
 def main():
     token = get_token()
-    artist_1 = "06HL4z0CvFAxyc27GXpf02"#input("Enter name of first artist: ")
+    artist_1 = "7zLm9op6LgPqKL62d1FzhO"#input("Enter name of first artist: ")
     artist_2 = "6WgImmkHfjxcmhg6AhqzSx"#input("Enter name of second artist: ")
 
-    search_methods = ["BFS", "DFS", "Dijkstra", "A*"]
+    search_methods = ["BFS", "DFS", "Dijkstra", "A*", "Get Lengths"]
     print("Search methods:")
     for i in range(len(search_methods)):
         print(f"{i}. {search_methods[i]}")
-    search_method = 0#input("Enter index of method: ")
+    search_method = 4#input("Enter index of method: ")
 
     conn = sqlite3.connect('../artists.db')
     cursor = conn.cursor()
