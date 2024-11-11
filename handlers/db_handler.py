@@ -1,8 +1,7 @@
 import sqlite3
 
-def create_tables():
-    conn = sqlite3.connect('data/artists.db')
-    cursor = conn.cursor()
+
+def create_tables(conn, cursor):
     cursor.execute('''CREATE TABLE IF NOT EXISTS all_artists (
                    artist_id text PRIMARY KEY,
                    name text,
@@ -21,7 +20,6 @@ def create_tables():
                    PRIMARY KEY (artist_id, genre)
                    )''')
     conn.commit()
-    conn.close()
 
 
 def insert_artist_data(data_lst, table, conn, cursor):
@@ -101,6 +99,12 @@ def get_all_searched(is_searched, cursor):
     cursor.execute(f"SELECT * FROM all_artists WHERE is_searched = {is_searched}")
     artists = cursor.fetchall()
     return artists
+
+
+def get_all_searched_count(is_searched, cursor):
+    cursor.execute(f"SELECT COUNT(*) FROM all_artists WHERE is_searched = {is_searched}")
+    count = cursor.fetchone()[0]
+    return count
 
 
 def get_all_genres(cursor):
