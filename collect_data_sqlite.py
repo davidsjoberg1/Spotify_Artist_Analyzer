@@ -112,8 +112,7 @@ def create_artist_data(artist):
     
     return artist_data
 
-
-if __name__ == '__main__':
+def main():
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     if input("Delete tables? y/n") == "y":

@@ -1,6 +1,7 @@
 from handlers.db_handler import *
 import sqlite3
 from handlers.spotify_api_handler import get_artist_spotify, get_token
+from data_analysis.search_methods import bfs, dfs
 
 
 def find_shortest_path(a1, a2, search_method, cursor, token):
@@ -41,7 +42,7 @@ def find_shortest_path(a1, a2, search_method, cursor, token):
         return
 
 
-if __name__ == "__main__":
+def main():
     token = get_token()
     artist_1 = "ADAAM"#input("Enter name of first artist: ")
     artist_2 = "C3 Too Loose"#input("Enter name of second artist: ")

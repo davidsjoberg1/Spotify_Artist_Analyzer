@@ -9,7 +9,7 @@ def bfs(a1, a2, cursor):
     :param cursor: The cursor to the database
     :return: The path between the two artists
     """
-    explored = [a1]
+    explored = {a1: None}
     queue = [[a1]]
     while queue:
         path = queue.pop(0)
@@ -18,7 +18,7 @@ def bfs(a1, a2, cursor):
             return path
         for related_artist in get_related_artists(node, cursor):
             if related_artist[0] not in explored:
-                explored.append(related_artist[0])
+                explored[related_artist[0]] = None
                 new_path = list(path)
                 new_path.append(related_artist[0])
                 queue.append(new_path)
@@ -34,7 +34,7 @@ def dfs(a1, a2, cursor):
     :param cursor: The cursor to the database
     :return: The path between the two artists
     """
-    explored = [a1]
+    explored = {a1: None}
     stack = [[a1]]
     while stack:
         path = stack.pop()
@@ -44,7 +44,7 @@ def dfs(a1, a2, cursor):
             return path
         for related_artist in get_related_artists(node, cursor):
             if related_artist[0] not in explored:
-                explored.append(related_artist[0])
+                explored[related_artist[0]] = None
                 new_path = list(path)
                 new_path.append(related_artist[0])
                 stack.append(new_path)
