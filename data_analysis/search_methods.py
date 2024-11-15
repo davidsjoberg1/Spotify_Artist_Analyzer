@@ -56,11 +56,11 @@ def dfs(a1, a2, cursor):
                 stack.append(new_path)
     return None
 
-
+@profile
 def get_all_lengths(a1, cursor):
     """
     Find the path length from one artist to all others in the database using breadth-first search
-    Write to a json file
+    ##Write to a json file
     :param a1: The id of the artist
     :param cursor: The cursor to the database
     :return: Dict of paths lengths

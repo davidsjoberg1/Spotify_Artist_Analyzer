@@ -1,10 +1,16 @@
 #include <iostream>
 #include <string>
 #include <array>
+#include "../handlers/spotifyAPIHandler.h"
+
+
 
 
 using namespace std;
 
-int main(){
-    // find a good way to call python functions from c++
+int _findShortestPath(){
+    getToken();
+
+    return 0;
+
 }

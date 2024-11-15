@@ -8,14 +8,14 @@ CXXFLAGS = -Wall -std=c++11
 TARGET = main
 
 # Source files
-SRCS = main.cpp
+SRCS = main.cpp data_analysis/findShortestPath.cpp handlers/spotifyAPIHandler.cpp dotenv.cpp
 
 # Object files
 OBJS = $(SRCS:.cpp=.o)
 
 # Rule to build the target executable
 $(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(TARGET)
 
 # Rule to build object files from source files
 %.o: %.cpp

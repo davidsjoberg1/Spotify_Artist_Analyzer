@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <array>
+#include "data_analysis/findShortestPath.h"
 
 using namespace std;
 
@@ -18,7 +19,9 @@ int main() {
     getline(std::cin, action);
 
     if (action == "1"){
+        _findShortestPath();
         cout << "Search" << endl;
+
     } else if (action == "2"){
         cout << "Exit" << endl;
     }
@@ -28,7 +31,3 @@ int main() {
     return 0;
 }
 
-// Function to greet the user
-void greetUser(const std::string &name) {
-    std::cout << "Hello, " << name << "! Welcome to the program!" << std::endl;
-}
