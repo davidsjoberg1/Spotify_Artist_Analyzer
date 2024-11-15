@@ -49,7 +49,7 @@ def find_shortest_path(a1, a2, search_method, cursor, token):
 
 def main():
     token = get_token()
-    artist_1 = "7zLm9op6LgPqKL62d1FzhO"#input("Enter name of first artist: ")
+    artist_1 = "3ginr2vlIj2Zsp3RJhdw6t"#input("Enter name of first artist: ")
     artist_2 = "6WgImmkHfjxcmhg6AhqzSx"#input("Enter name of second artist: ")
 
     search_methods = ["BFS", "DFS", "Dijkstra", "A*", "Get Lengths"]
