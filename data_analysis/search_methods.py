@@ -34,6 +34,7 @@ def bfs(a1, a2, cursor):
 
 
 def dfs(a1, a2, cursor):
+    # TODO not sure if correct???
     """
     Find a path between two artists using depth-first search
     This method is not guaranteed to find the shortest path
