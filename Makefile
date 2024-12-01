@@ -4,18 +4,20 @@ CXX = g++
 # Compiler flags
 CXXFLAGS = -Wall -std=c++11
 
+LDFLAGS = -lsqlite3
+
 # Target executable
 TARGET = main
 
 # Source files
-SRCS = main.cpp data_analysis/findShortestPath.cpp handlers/spotifyAPIHandler.cpp dotenv.cpp
+SRCS = main.cpp data_analysis/findShortestPath.cpp 
 
 # Object files
 OBJS = $(SRCS:.cpp=.o)
 
 # Rule to build the target executable
 $(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(TARGET)
+	$(CXX) $(CXXFLAGS) $(OBJS) $(LDFLAGS) -o $(TARGET)
 
 # Rule to build object files from source files
 %.o: %.cpp

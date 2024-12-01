@@ -2,6 +2,7 @@ from line_profiler import profile
 from handlers.db_handler import *
 from datetime import datetime
 from handlers.json_handler import write_json
+import time
 
 
 
@@ -65,6 +66,8 @@ def get_all_lengths(a1, cursor):
     :param cursor: The cursor to the database
     :return: Dict of paths lengths
     """
+    start_time = datetime.now().timestamp()
+    
     explored = {}
     found = {a1: None}
     # Key = path length, Value = number of artists with that path length
@@ -91,4 +94,5 @@ def get_all_lengths(a1, cursor):
         print("\nAll artists found")
     else:
         print("\nFound: ", artists_found, " artists of ", len(get_all("all_artists", cursor)))
+    print("Time: ", datetime.now().timestamp() - start_time)
     return path_lengths
