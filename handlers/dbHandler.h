@@ -8,6 +8,6 @@
 using namespace std;
 
 // Declaration of the function you want to call
-vector<string> getRelatedArtists(string artist_id, sqlite3* db)
+vector<string> getRelatedArtists(string artist_id, sqlite3* db);
 
 #endif

@@ -50,6 +50,9 @@
         "variant": "cpp",
         "vector": "cpp",
         "algorithm": "cpp",
-        "charconv": "cpp"
+        "charconv": "cpp",
+        "queue": "cpp",
+        "deque": "cpp",
+        "unordered_set": "cpp"
     }
 }
