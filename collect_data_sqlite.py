@@ -31,6 +31,9 @@ def find_all_artists():
             num_all_searched = get_all_searched_count(1, cursor)
             current_artist = get_first_not_searched_artist(cursor)
 
+            conn.close()
+            return current_artist
+
             # 172 800 requests per day 
             time_diff = datetime.now().timestamp() - counter_time
             if time_diff < 0.5:
@@ -125,6 +128,8 @@ def main():
     conn.close()
     while True:
         stop = find_all_artists()
+        print(get_related_artists_spotify(token, get_artist_spotify(token, "Eminem")[0]['id']))
+        break
         if stop:
             break
 
