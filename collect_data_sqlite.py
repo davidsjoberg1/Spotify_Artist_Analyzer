@@ -3,7 +3,7 @@ import time
 from handlers.spotify_api_handler import get_token, get_artist_spotify, get_related_artists_spotify
 import sqlite3
 from handlers.db_handler import *
-from handlers.json_handler import write_json
+
 
 DB_PATH = '../artists.db'
 #DB_PATH = 'data/artists.db'
@@ -47,10 +47,6 @@ def find_all_artists():
                 print("Total number of artist relationships found: ", get_table_length("artist_relationships", cursor))
                 conn.close()
                 return True
-
-            if num_all_searched % 1000 == 0:
-                write_json(num_all_searched, str(round((datetime.now().timestamp() - thousand_time)/60, 2)) + " minutes", "data/time.json")
-                thousand_time = datetime.now().timestamp()
 
             if num_all_searched % 100 == 0:
                 num_all_artists = get_table_length("all_artists", cursor)

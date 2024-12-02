@@ -1,6 +1,7 @@
 from line_profiler import profile
 from handlers.db_handler import *
 from datetime import datetime
+import time
 
 
 
@@ -12,6 +13,7 @@ def bfs(a1, a2, cursor):
     :param cursor: The cursor to the database
     :return: The path between the two artists
     """
+
     explored = {a1: None}
     queue = [[a1]]
     while queue:        
@@ -19,6 +21,7 @@ def bfs(a1, a2, cursor):
         node = path[-1]
         if node == a2:
             print("\n")
+
             return path
         for related_artist in get_related_artists(node, cursor):
             if related_artist[0] not in explored:
@@ -26,10 +29,7 @@ def bfs(a1, a2, cursor):
                 new_path = list(path)
                 new_path.append(related_artist[0])
                 queue.append(new_path)
-        print("len path: ", len(path), " len queue: ", len(queue), "len explored: ", len(explored), end="\r")
-        
-        
-
+        #print("len path: ", len(path), " len queue: ", len(queue), "len explored: ", len(explored), end="\r")
     return None
 
 
@@ -57,5 +57,44 @@ def dfs(a1, a2, cursor):
                 new_path = list(path)
                 new_path.append(related_artist[0])
                 stack.append(new_path)
-                
     return None
+
+@profile
+def get_all_lengths(a1, cursor):
+    """
+    Find the path length from one artist to all others in the database using breadth-first search
+    ##Write to a json file
+    :param a1: The id of the artist
+    :param cursor: The cursor to the database
+    :return: Dict of paths lengths
+    """
+    start_time = datetime.now().timestamp()
+    
+    explored = {}
+    found = {a1: None}
+    # Key = path length, Value = number of artists with that path length
+    path_lengths = {}
+    queue = [[a1]]
+    while queue:
+        path = queue.pop(0)
+        node = path[-1]
+
+        for related_artist in get_related_artists(node, cursor):
+            if related_artist[0] not in found:
+                found[related_artist[0]] = None
+                new_path = list(path)
+                new_path.append(related_artist[0])
+                queue.append(new_path)
+
+        explored[node] = None
+        path_lengths[len(path)-1] = path_lengths.get(len(path) -1, 0) + 1
+        print("Path lengths: ", path_lengths, " Queue length: ", len(queue), end="\r")
+    artists_found = 0
+    for i in range(len(path_lengths)):
+        artists_found += path_lengths[i]
+    if artists_found == len(get_all("all_artists", cursor)):
+        print("\nAll artists found")
+    else:
+        print("\nFound: ", artists_found, " artists of ", len(get_all("all_artists", cursor)))
+    print("Time: ", datetime.now().timestamp() - start_time)
+    return path_lengths

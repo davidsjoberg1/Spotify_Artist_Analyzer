@@ -117,5 +117,15 @@ def get_related_artists(artist_id, cursor):
     related_artists = cursor.fetchall()
     return related_artists
 
+def get_all_artist_relationships(cursor):
+    cursor.execute(f"SELECT * FROM artist_relationships")
+    relationships = cursor.fetchall()
+    return relationships
+
+def get_1000_random_artists(cursor):
+    cursor.execute(f"SELECT artist_id FROM all_artists WHERE is_searched = 1 ORDER BY RANDOM() LIMIT 1000")
+    artists = cursor.fetchall()
+    return artists
+
     
 

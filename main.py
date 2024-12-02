@@ -1,5 +1,5 @@
 import collect_data_sqlite
-import find_shortest_path
+import data_analysis.find_shortest_path as find_shortest_path
 
 if __name__ == "__main__":
     actions_list = ["Collect data", "Analyze data", "Exit"]
