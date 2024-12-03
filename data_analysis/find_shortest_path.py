@@ -50,7 +50,7 @@ def get_all_lengths(a1, cursor):
 
 def create_1000_random_artists_file(cursor):
     """
-    ONLY RUN ONC
+    ONLY RUN ONCE
     """
     json_list = []
     artists_list = get_1000_random_artists(cursor)

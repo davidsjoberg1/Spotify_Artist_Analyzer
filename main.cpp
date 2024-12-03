@@ -19,7 +19,7 @@ int main() {
     getline(std::cin, action);
 
     if (action == "1"){
-        _findShortestPath();
+        findShortestPath();
         cout << "Search" << endl;
 
     } else if (action == "2"){
