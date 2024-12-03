@@ -2,7 +2,7 @@
 CXX = g++
 
 # Compiler flags
-CXXFLAGS = -Wall -std=c++11
+CXXFLAGS = -Wall -std=c++11 -I/opt/homebrew/Cellar/nlohmann-json/3.11.3/include
 
 LDFLAGS = -lsqlite3
 

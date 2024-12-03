@@ -84,13 +84,6 @@ def get_unsearched_artist():
     return None
 
         
-
-
-
-
-
-        
-
 def main():
     conn = sqlite3.connect('../artists.db')
     cursor = conn.cursor()
@@ -104,6 +97,6 @@ def main():
         write_to_json_file(artist_id, path_lengths, exec_time)
         print("Time: ", datetime.now().timestamp() - start_time)
 
-    
 
     conn.close()
+

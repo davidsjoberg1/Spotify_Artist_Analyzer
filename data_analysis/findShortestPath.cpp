@@ -9,56 +9,83 @@
 #include <queue>
 #include <deque>
 #include "../handlers/dbHandler.h"
+#include <nlohmann/json.hpp>
+#include <fstream>
+#include "findShortestPath.h"
+
+
 
 using namespace std;
 
 
-int bfs(string a1, string a2, sqlite3* db){
-    auto startTime = std::chrono::high_resolution_clock::now();
-    unordered_set<string> explored;
-    deque<vector<string>> queue;
-    vector<string> path;
-
-
-    queue.push_back({a1});
-    explored.insert(a1);
-
-
-    while (queue.size() > 0){
-
-        path = queue.front();
-        queue.pop_front();
-        string node = path.back();
-
-        if (node == a2){
-            break;
+void writeToJSON(string artist_id, unordered_map<int, int> pathLengths, int execTime){
+    try{
+        const string fileName = "data/1000_random_artists_cpp.json";
+    
+        ifstream inFile(fileName);
+        if (!inFile.is_open()) {
+            throw std::runtime_error("Could not open input file.");
         }
-        vector<string> relatedArtists = getRelatedArtists(node, db);
-        for (string relatedArtist: relatedArtists){
-            if(explored.find(relatedArtist) == explored.end()){
-                explored.insert(relatedArtist);
-                vector<string> newPath = path;
-                newPath.push_back(relatedArtist);
-                queue.push_back(newPath);
+        nlohmann::json jsonData;
+        inFile >> jsonData; // Parse JSON file content into jsonData
+        inFile.close();
+
+        for (int i = 0; i < jsonData.size(); i++){
+            if (jsonData[i]["artist_id"] == artist_id) {
+                jsonData[i]["path_lengths"] = pathLengths;
+                jsonData[i]["time"] = execTime;
+                break;
             }
         }
-        //cout << "\rPath size: " << path.size() << " Queue size: " << queue.size() << " Explored size: " << explored.size() << flush;
+
+        ofstream outFile(fileName);
+        if (!outFile.is_open()) {
+            throw std::runtime_error("Could not open output file.");
+        }
+        outFile << jsonData.dump(4); // Write jsonData to output file
+        outFile.close();
     }
+    catch (const exception& e) {
+        cerr << "Error: " << e.what() << std::endl;
 
-    auto end = chrono::high_resolution_clock::now();
-    auto duration = chrono::duration_cast<chrono::seconds>(end - startTime);
-    cout << "Execution time: " << duration.count() << " seconds" << endl;
-
-    return 0;
+    }
 }
 
-int getLenghts(string artist_id, sqlite3* db){
+string getUnsearchedArtist(){
+    try{
+        const string fileName = "data/1000_random_artists_cpp.json";
+    
+        ifstream inFile(fileName);
+        if (!inFile.is_open()) {
+            throw std::runtime_error("Could not open input file.");
+        }
+        nlohmann::json jsonData;
+        inFile >> jsonData; // Parse JSON file content into jsonData
+        inFile.close();
+
+        for (int i = 0; i < jsonData.size(); i++){
+            if (jsonData[i]["path_lengths"] == 0) {
+                return jsonData[i]["artist_id"];
+            }
+        }
+        return "";
+
+    }
+    catch (const exception& e) {
+        cerr << "Error: " << e.what() << std::endl;
+        return "";
+    }
+    return "";
+}
+
+ int getLenghts(string artist_id, sqlite3* db, unordered_map<int, int>& pathLengths){
     auto startTime = chrono::high_resolution_clock::now();
     unordered_set<string> explored;
-    unordered_map<int, int> pathLengths;
     deque<vector<string>> queue;
     vector<string> path;
-
+    vector<string> newPath;
+    string node;
+    vector<string> relatedArtists;
 
     queue.push_back({artist_id});
     explored.insert(artist_id);
@@ -66,57 +93,55 @@ int getLenghts(string artist_id, sqlite3* db){
     int counter = 0;
     while (queue.size() > 0){
         counter++;
-
+        
         path = queue.front();
         queue.pop_front();
-        string node = path.back(); 
-        
+        node = path.back(); 
+        if (counter == 100000){
+            cout << "\rPath size: " << path.size() << " Queue size: " << queue.size() << " Explored size: " << explored.size() << endl;
+            counter = 0;
+        }
 
-        vector<string> relatedArtists = getRelatedArtists(node, db);
+        relatedArtists = getRelatedArtists(node, db);
         for (string relatedArtist: relatedArtists){
             if(explored.find(relatedArtist) == explored.end()){
                 explored.insert(relatedArtist);
-                vector<string> newPath = path;
+                newPath = path;
                 newPath.push_back(relatedArtist);
                 queue.push_back(newPath);
             }
         }
+        
         pathLengths[path.size()-1] = pathLengths[path.size()-1] + 1;
 
-        //cout << "\rPath size: " << path.size() << " Queue size: " << queue.size() << " Explored size: " << explored.size() << flush;
     }
 
     auto end = chrono::high_resolution_clock::now();
-    auto duration = chrono::duration_cast<chrono::seconds>(end - startTime);
-    cout << "Execution time: " << duration.count() << " seconds" << endl;
+    auto execTime = chrono::duration_cast<chrono::seconds>(end - startTime);
+    cout << "Execution time: " << execTime.count() << " seconds" << endl;
 
-    return 0;
+    return execTime.count();
 }
 
-int _findShortestPath(){
-    string artist_id = "7zLm9op6LgPqKL62d1FzhO";
-    string find_id = "2vpNYYY6ysRzg1H95E9QgG";
-
+int findShortestPath(){
     sqlite3* db;
-    char* errMsg = nullptr;
-
     if (sqlite3_open("../artists.db", &db) != SQLITE_OK) {
         cerr << "Error opening database: " << sqlite3_errmsg(db) << endl;
         return 1;
     }
     cout << "Database opened successfully!" << endl;
+    while (true){
+        string artist_id = getUnsearchedArtist();
+        if (artist_id == ""){
+            break;
+        }
+        // Key: Length of a path, Value: Number of paths with that length
+        unordered_map<int, int> pathLengths;
+        int execTime = getLenghts(artist_id, db, pathLengths);
+        writeToJSON(artist_id, pathLengths, execTime);
 
-
-    getLenghts(artist_id, db);
-    
-    
+    }    
     sqlite3_close(db); 
-
-
-
-
-
-
     return 0;
 
 }

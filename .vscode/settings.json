@@ -54,5 +54,6 @@
         "queue": "cpp",
         "deque": "cpp",
         "unordered_set": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }
