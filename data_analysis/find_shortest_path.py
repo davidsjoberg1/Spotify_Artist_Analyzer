@@ -17,25 +17,26 @@ def get_all_lengths(a1, cursor):
     """
     start_time = datetime.now().timestamp()
     
-    explored = {}
-    found = {a1: None}
+    explored = {a1}
     # Key = path length, Value = number of artists with that path length
     path_lengths = {}
     queue = [[a1]]
+    counter = 0
     while queue:
+        counter += 1
         path = queue.pop(0)
         node = path[-1]
-
+        if counter == 100_000:
+            print("Path lengths: ", path_lengths, " Queue length: ", len(queue), "Explored: ", len(explored))
+            counter = 0
         for related_artist in get_related_artists(node, cursor):
-            if related_artist[0] not in found:
-                found[related_artist[0]] = None
+            if related_artist[0] not in explored:
+                explored.add(related_artist[0])
                 new_path = list(path)
                 new_path.append(related_artist[0])
                 queue.append(new_path)
 
-        explored[node] = None
         path_lengths[len(path)-1] = path_lengths.get(len(path) -1, 0) + 1
-        #print("Path lengths: ", path_lengths, " Queue length: ", len(queue), end="\r")
     artists_found = 0
     for i in range(len(path_lengths)):
         artists_found += path_lengths[i]
