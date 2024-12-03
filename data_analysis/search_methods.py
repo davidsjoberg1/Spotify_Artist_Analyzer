@@ -1,3 +1,4 @@
+# NOT USED
 from line_profiler import profile
 from handlers.db_handler import *
 from datetime import datetime

@@ -50,7 +50,7 @@ def get_all_lengths(a1, cursor):
 
 def create_1000_random_artists_file(cursor):
     """
-    ONLY RUN ONCE
+    ONLY RUN ONC
     """
     json_list = []
     artists_list = get_1000_random_artists(cursor)
@@ -83,13 +83,6 @@ def get_unsearched_artist():
     return None
 
         
-
-
-
-
-
-        
-
 def main():
     conn = sqlite3.connect('../artists.db')
     cursor = conn.cursor()
@@ -102,7 +95,5 @@ def main():
         path_lengths, exec_time = get_all_lengths(artist_id, cursor)
         write_to_json_file(artist_id, path_lengths, exec_time)
         print("Time: ", datetime.now().timestamp() - start_time)
-
-    
 
     conn.close()
