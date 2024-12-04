@@ -10,7 +10,7 @@ LDFLAGS = -lsqlite3
 TARGET = main
 
 # Source files
-SRCS = main.cpp data_analysis/findShortestPath.cpp handlers/dbHandler.cpp
+SRCS = main.cpp data_analysis/findShortestPath.cpp handlers/dbHandler.cpp data_analysis/graph.cpp
 
 # Object files
 OBJS = $(SRCS:.cpp=.o)

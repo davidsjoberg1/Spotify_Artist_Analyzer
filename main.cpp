@@ -2,13 +2,14 @@
 #include <string>
 #include <array>
 #include "data_analysis/findShortestPath.h"
+#include "data_analysis/graph.h"
 
 using namespace std;
 
 int main() {
     // Variable to store the user's name
     string action;
-    array <string, 2> actions = {"Search", "Exit"};
+    array <string, 3> actions = {"Search", "Graph", "Exit"};
 
     for (int i = 0; i < actions.size(); i++) {
         cout << i + 1 << ". " << actions[i] << endl;
@@ -23,6 +24,9 @@ int main() {
         cout << "Search" << endl;
 
     } else if (action == "2"){
+        cout << "Graph" << endl;
+        findNum();
+    } else if (action == "3"){
         cout << "Exit" << endl;
     }
 

@@ -127,5 +127,15 @@ def get_1000_random_artists(cursor):
     artists = cursor.fetchall()
     return artists
 
+def get_all_artist_ids(cursor):
+    cursor.execute(f"SELECT artist_id FROM all_artists")
+    artists = cursor.fetchall()
+    return artists
+
+def get_num_of_incoming_relationships(artist_id, cursor):
+    cursor.execute(f"SELECT COUNT(*) FROM artist_relationships WHERE related_artist_id = '{artist_id}'")
+    count = cursor.fetchone()[0]
+    return count
+
     
 
