@@ -65,9 +65,11 @@ string getUnsearchedArtist(){
 
         for (int i = 0; i < jsonData.size(); i++){
             if (jsonData[i]["path_lengths"] == 0) {
+                cout << "Num of searched: " << i << endl;
                 return jsonData[i]["artist_id"];
             }
         }
+        cout << "none" << endl;
         return "";
 
     }
@@ -90,17 +92,11 @@ string getUnsearchedArtist(){
     queue.push_back({artist_id});
     explored.insert(artist_id);
     
-    int counter = 0;
     while (queue.size() > 0){
-        counter++;
         
         path = queue.front();
         queue.pop_front();
         node = path.back(); 
-        if (counter == 100000){
-            cout << "\rPath size: " << path.size() << " Queue size: " << queue.size() << " Explored size: " << explored.size() << endl;
-            counter = 0;
-        }
 
         relatedArtists = getRelatedArtists(node, db);
         for (string relatedArtist: relatedArtists){

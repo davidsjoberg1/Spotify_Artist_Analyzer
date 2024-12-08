@@ -26,9 +26,11 @@ def get_all_lengths(a1, cursor):
         counter += 1
         path = queue.pop(0)
         node = path[-1]
+        """
         if counter == 100_000:
             print("Path lengths: ", path_lengths, " Queue length: ", len(queue), "Explored: ", len(explored))
             counter = 0
+        """
         for related_artist in get_related_artists(node, cursor):
             if related_artist[0] not in explored:
                 explored.add(related_artist[0])
@@ -66,11 +68,14 @@ def create_1000_random_artists_file(cursor):
 def write_to_json_file(artist_id, path_lengths, exec_time):
     with open("data/1000_random_artists_python.json", 'r') as f:
         data = json.load(f)
+    counter = 0
     for artist in data:
+        counter += 1
         if artist["artist_id"] == artist_id:
             artist["path_lengths"] = path_lengths
             artist["time"] = exec_time
             break
+    print("Num of searched: ", counter)
     with open("data/1000_random_artists_python.json", 'w') as f:
         json.dump(data, f, indent=4)
 
