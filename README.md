@@ -17,8 +17,8 @@ This list might get longer with time
 
 
 ## Find the path lenghts from artists to every other artist
-# Demo Video
 
+Text to be updated.. but here is a video :)
 [<iframe width="560" height="315" src="https://youtu.be/Q3XC9idfRwA" frameborder="0" allowfullscreen></iframe>](https://github.com/user-attachments/assets/cdf439fc-460b-4fa6-8312-f28eeb4683ca)
 
 
