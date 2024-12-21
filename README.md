@@ -19,7 +19,7 @@ This list might get longer with time
 ## Find the path lenghts from artists to every other artist
 
 Text to be updated.. but here is a video 
-[<iframe width="560" height="315" src="https://youtu.be/Q3XC9idfRwA" frameborder="0" allowfullscreen></iframe>](https://github.com/user-attachments/assets/cdf439fc-460b-4fa6-8312-f28eeb4683ca)
+<iframe width="560" height="315" src="https://youtu.be/Q3XC9idfRwA" frameborder="0" allowfullscreen></iframe>(https://github.com/user-attachments/assets/cdf439fc-460b-4fa6-8312-f28eeb4683ca)
 
 Just like in the Wikipedia graph video, I want to see what the longest paths are between artists. Since it is not time feasible to find the paths from every artist to every other artist in the database I will probably do this for about 10 000 artists, which should give me good enough data.
 The code for the search is done through a bfs algoritm. I have done this in Python ([search_methods.py](data_analysis/search_methods.py))but not yet in C++. 
