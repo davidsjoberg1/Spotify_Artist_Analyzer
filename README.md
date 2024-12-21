@@ -18,6 +18,8 @@ This list might get longer with time
 
 ## Find the path lenghts from artists to every other artist
 
+Will add more explanation here..
+
 [<iframe width="560" height="315" src="https://youtu.be/Q3XC9idfRwA" frameborder="0" allowfullscreen></iframe>](https://github.com/user-attachments/assets/cdf439fc-460b-4fa6-8312-f28eeb4683ca)
 
 Just like in the Wikipedia graph video, I want to see what the longest paths are between artists. Since it is not time feasible to find the paths from every artist to every other artist in the database I will probably do this for about 10 000 artists, which should give me good enough data.
