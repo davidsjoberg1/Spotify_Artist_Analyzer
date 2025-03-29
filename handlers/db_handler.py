@@ -127,5 +127,10 @@ def get_1000_random_artists(cursor):
     artists = cursor.fetchall()
     return artists
 
+def get_first_100_artist_relationships(cursor):
+    cursor.execute(f"SELECT * FROM artist_relationships LIMIT 10000")
+    relationships = cursor.fetchall()
+    return relationships
+
     
 

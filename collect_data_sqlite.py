@@ -31,8 +31,7 @@ def find_all_artists():
             num_all_searched = get_all_searched_count(1, cursor)
             current_artist = get_first_not_searched_artist(cursor)
 
-            conn.close()
-            return current_artist
+
 
             # 172 800 requests per day 
             time_diff = datetime.now().timestamp() - counter_time
